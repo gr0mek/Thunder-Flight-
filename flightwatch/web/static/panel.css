@@ -164,3 +164,17 @@ a.fw-tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent
 .tg-kb-row span { flex: 1; padding: 8px 4px; border-radius: 8px; border: 1px solid var(--color-accent-700); color: var(--color-accent-300); font-size: 12px; text-align: center; font-weight: 500; }
 .tg-kb-row span.primary { border-color: var(--color-accent); }
 .tg-kb-row span.quiet { border-color: var(--color-neutral-700); color: var(--color-neutral-300); }
+
+/* — Ustawienia — */
+.set-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+.set-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fw-chip.quiet { background: transparent; color: var(--color-neutral-400); box-shadow: inset 0 0 0 1px var(--color-neutral-800); }
+.fw-chip.mono-s { font-family: ui-monospace, Menlo, monospace; }
+.fw-mono-key { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--color-neutral-300); }
+.field input[aria-invalid="true"] { border-color: var(--color-accent-400); }
+.field input:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 0; border-color: transparent; }
+.set-error { font-size: 12px; color: var(--color-accent-300); }
+.set-clear { align-self: flex-start; padding: 0; border: 0; background: none; font: 12px var(--font-body); color: var(--color-neutral-400); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.set-clear:hover { color: var(--color-accent-300); }
+.fw-alert.warn { border-color: var(--color-neutral-600); color: var(--color-neutral-200); }
+.set-cmd { display: block; padding: 8px 10px; border-radius: 8px; background: var(--color-bg); font: 12px ui-monospace, Menlo, monospace; color: var(--color-neutral-200); }

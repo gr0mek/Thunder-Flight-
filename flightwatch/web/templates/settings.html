@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Ustawienia · FlightWatch{% endblock %}
+{% block content %}
+{% set r = v.ready %}
+<div class="split-420">
+  <div class="fw-stack" style="gap:20px;">
+    <div class="fw-stack" style="gap:4px;">
+      <h3 class="fw-h3">Ustawienia</h3>
+      <span class="fw-sub">Klucze API i adresy usług. Zapis do <span class="fw-chip mono">{{ v.env_path }}</span> na serwerze (chmod 600) – nigdy do repo ani config.yaml. Sekrety po zapisaniu widać tylko jako końcówkę.</span>
+    </div>
+
+    {% for grp in v.groups %}{% set g = grp.g %}
+    <section class="fw-card" id="g-{{ g.id }}" style="gap:14px;">
+      <div style="display:flex;align-items:baseline;gap:12px;">
+        <span class="fw-card-title">{{ g.title }}</span>
+        <span class="fw-note">{{ g.description }}</span>
+        {% if grp.required %}
+        <span class="fw-chip{% if grp.done == grp.required %} accent{% endif %}" style="margin-left:auto;white-space:nowrap;">{{ grp.done }} / {{ grp.required }} wymaganych</span>
+        {% else %}
+        <span class="fw-chip" style="margin-left:auto;">opcjonalne</span>
+        {% endif %}
+      </div>
+      {% if grp.saved %}<div class="fw-alert" role="status">Zapisano. Usługi wczytają zmiany po restarcie (patrz obok).</div>{% endif %}
+      {% if grp.form_error %}<div class="fw-alert" role="alert">{{ grp.form_error }}</div>{% endif %}
+      {% if grp.result %}<div class="fw-alert{% if not grp.result.ok %} warn{% endif %}" role="status">{{ '✓' if grp.result.ok else '!' }} {{ grp.result.message }}</div>{% endif %}
+
+      <form method="post" action="/ustawienia" class="fw-stack" style="gap:14px;">
+        <input type="hidden" name="csrf" value="{{ csrf }}">
+        <input type="hidden" name="group" value="{{ g.id }}">
+        <div class="set-grid">
+          {% for f in grp.fields %}{% set s = f.s %}
+          <div class="field">
+            <div class="set-label">
+              <label for="f-{{ s.key }}">{{ s.label }}</label>
+              {% if f.is_set %}<span class="fw-chip accent mono-s">{{ f.shown if s.secret else 'ustawione' }}</span>
+              {% elif s.required %}<span class="fw-chip">brak</span>
+              {% else %}<span class="fw-chip quiet">opcjonalne</span>{% endif %}
+            </div>
+            <input id="f-{{ s.key }}" name="{{ s.key }}" type="{{ 'password' if s.secret else 'text' }}" value="{{ f.value }}"
+                   placeholder="{{ f.placeholder }}" autocomplete="off" spellcheck="false"
+                   {% if f.error %}aria-invalid="true" aria-describedby="e-{{ s.key }}"{% endif %}>
+            {% if f.error %}<span class="set-error" id="e-{{ s.key }}">{{ f.error }}</span>{% endif %}
+            <span class="fw-note"><span class="fw-mono-key">{{ s.key }}</span> · {{ s.help }}{% if s.link %} <a href="{{ s.link[1] }}" target="_blank" rel="noopener noreferrer">{{ s.link[0] }} ↗</a>{% endif %}</span>
+            {% if f.is_set %}<button class="set-clear" type="submit" name="clear" value="{{ s.key }}" formnovalidate>Usuń wartość</button>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+          <button class="fw-btn primary" type="submit">Zapisz</button>
+          {% for name, label in grp.tests %}
+          <button class="fw-btn" type="submit" formaction="/ustawienia/test" name="name" value="{{ name }}" formnovalidate>{{ label }}</button>
+          {% endfor %}
+          {% if g.id == 'providers' %}<span class="fw-note">Ignav: test po spike'u (sesja 0) – żeby nie zużywać budżetu.</span>{% endif %}
+          {% if g.id == 'backup' %}<span class="fw-note">Test odtworzenia kopii: sesja 5.</span>{% endif %}
+        </div>
+      </form>
+    </section>
+    {% endfor %}
+  </div>
+
+  <div class="fw-stack" style="gap:20px;align-self:start;position:sticky;top:20px;">
+    <section class="fw-card raised" style="gap:14px;">
+      <span class="fw-kicker">Gotowość do startu</span>
+      <div style="display:flex;align-items:baseline;gap:10px;">
+        <span class="ov-big">{{ r.ok }} / {{ r.total }}</span>
+        <span class="fw-sub">{{ 'gotowe do pierwszego skanu' if r.ok == r.total else 'do uzupełnienia' }}</span>
+      </div>
+      <div class="fw-bar"><div class="fw-bar-fill" style="width:{{ r.pct }};"></div></div>
+      <div class="fw-stack">
+        {% for it in r.checks %}
+        <div class="step">
+          <span class="step-dot{% if not it.ok %} warn{% endif %}"></span>
+          <div class="fw-stack"><span>{{ it.label }}</span><span class="fw-note">{{ it.detail }}</span></div>
+          <span style="color:{{ 'var(--color-accent-300)' if it.ok else 'var(--color-neutral-200)' }};">{{ '✓' if it.ok else '!' }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <section class="fw-card" style="gap:10px;font-size:13px;">
+      <span class="fw-card-title">Po zapisaniu</span>
+      <span class="fw-dim">Skany wczytają <span class="fw-mono-key">.env</span> przy następnym uruchomieniu timera. Bot – po restarcie:</span>
+      <code class="set-cmd">sudo systemctl restart fw-bot</code>
+      <span class="fw-note">Wartości progu, dat i harmonogramu zmieniasz w config.yaml – podgląd w zakładce <a href="/konfiguracja">Konfiguracja</a>.</span>
+    </section>
+  </div>
+</div>
+{% endblock %}

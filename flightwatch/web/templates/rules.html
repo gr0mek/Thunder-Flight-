@@ -39,6 +39,7 @@
     <span style="font-size:20px;font-weight:500;">{{ f.title }}</span>
     {% if v.saved %}<div class="fw-alert" role="status">Zapisano w fare_rules.yaml.</div>{% endif %}
     {% if f.error %}<div class="fw-alert" role="alert">{{ f.error }}</div>{% endif %}
+    <input type="hidden" name="csrf" value="{{ csrf }}">
     <input type="hidden" name="airline" value="{{ f.airline }}">
     {% for fld in f.fields %}
     <div class="field">

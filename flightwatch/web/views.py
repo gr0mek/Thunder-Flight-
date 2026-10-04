@@ -6,6 +6,8 @@ from collections.abc import Mapping, Sequence
 from typing import Any
 from urllib.parse import urlencode
 
+from flightwatch import checks as checks_mod
+from flightwatch import settings
 from flightwatch.fare_rules import FareRule, rule_id
 from flightwatch.text import decimal, group, plural, zl
 from flightwatch.web import demo
@@ -389,4 +391,85 @@ def config_view() -> View:
             "spare": group(demo.IGNAV_PLAN_SPARE),
             "limit": group(demo.IGNAV_PLAN_LIMIT),
         },
+    }
+
+
+# ---------------------------------------------------------------------------
+# 16 · Ustawienia (klucze API i usługi)
+# ---------------------------------------------------------------------------
+
+READINESS_ITEMS = (  # (etykieta, wymagane klucze)
+    ("Ignav – klucz API", ("IGNAV_API_KEY",)),
+    ("SerpApi – klucz API", ("SERPAPI_API_KEY",)),
+    ("Telegram – token i chat ID", ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID")),
+    ("healthchecks – 3 pingi", ("HC_PING_SCAN_FULL", "HC_PING_SCAN_CONFIRM", "HC_PING_BOT")),
+)
+
+TESTS = {
+    "serpapi": (("serpapi", "Testuj SerpApi"),),
+    "telegram": (("telegram", "Sprawdź token"), ("telegram_send", "Wyślij wiadomość testową")),
+    "hc": (("hc", "Wyślij ping testowy"),),
+}
+
+
+def _is_required(f: View) -> bool:
+    s: settings.Setting = f["s"]
+    return s.required
+
+
+def settings_view(
+    env: Mapping[str, str],
+    checks: Sequence[settings.Check],
+    *,
+    errors: Mapping[str, str] | None = None,
+    error_group: str | None = None,
+    saved: str | None = None,
+    result: tuple[str, checks_mod.Result] | None = None,
+    submitted: Mapping[str, str] | None = None,
+    env_path: str = ".env",
+) -> View:
+    """`submitted` – wartości z odrzuconego formularza; wracają tylko pola jawne, nigdy sekrety."""
+    errors = errors or {}
+    submitted = submitted or {}
+    groups = []
+    for g in settings.GROUPS:
+        fields: list[View] = []
+        for s in settings.SETTINGS:
+            if s.group != g.id:
+                continue
+            current = env.get(s.key, "")
+            fields.append(
+                {
+                    "s": s,
+                    "is_set": bool(current),
+                    "shown": settings.mask(current, s.secret) if current else "",
+                    "value": "" if s.secret else submitted.get(s.key, current),
+                    "placeholder": "zostaw puste, by nie zmieniać" if s.secret and current else s.placeholder,
+                    "error": errors.get(s.key) if error_group == g.id else None,
+                }
+            )
+        required = [f for f in fields if _is_required(f)]
+        groups.append(
+            {
+                "g": g,
+                "fields": fields,
+                "done": sum(f["is_set"] for f in required),
+                "required": len(required),
+                "tests": TESTS.get(g.test or "", ()),
+                "saved": saved == g.id,
+                "has_errors": error_group == g.id and bool(errors),
+                "form_error": errors.get("_") if error_group == g.id else None,
+                "result": result[1] if result and g.test and result[0].startswith(g.test) else None,
+            }
+        )
+    items: list[View] = [{"label": label, "ok": all(env.get(k) for k in keys),
+              "detail": "ustawione" if all(env.get(k) for k in keys) else
+              "brak: " + ", ".join(k for k in keys if not env.get(k))}
+             for label, keys in READINESS_ITEMS]  # fmt: skip
+    items += [{"label": c.label, "ok": c.ok, "detail": c.detail} for c in checks]
+    ok = sum(i["ok"] for i in items)
+    return {
+        "groups": groups,
+        "ready": {"checks": items, "ok": ok, "total": len(items), "pct": f"{ok / len(items) * 100:.0f}%"},
+        "env_path": env_path,
     }

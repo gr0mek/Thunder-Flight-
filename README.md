@@ -36,10 +36,11 @@ Projekt z `project/FlightWatch UI.dc.html` zbudowany w stacku z `CLAUDE.md` (Pyt
 | Scenariusz z ekranów 01–10 | `flightwatch/alerts/preview.py` (`uv run python -m flightwatch.alerts.preview`) i strona `/telegram` w panelu |
 | 11–15 Panel: Przegląd, Oferty, Skany, Reguły taryf, Konfiguracja | `flightwatch/web/` (FastAPI + Jinja, CSS na tokenach Nocturne) – patrz `docs/adr-006-panel-fastapi-jinja.md` |
 | Formularz reguł taryf | `flightwatch/fare_rules.py` → `data/fare_rules.yaml` |
+| Ustawienia: klucze API, Telegram, healthchecks, kopie B2 + gotowość do startu | `flightwatch/settings.py` → `.env` (600), testy połączeń w `flightwatch/checks.py` – patrz `docs/adr-007-panel-edytuje-env.md` |
 
 ```bash
 uv sync
-uv run flightwatch-panel          # http://127.0.0.1:8080
+uv run flightwatch-panel          # http://127.0.0.1:8080 → Ustawienia
 uv run pytest && uv run ruff check . && uv run mypy
 ```
 
