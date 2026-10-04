@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/nocturne-4fd0b114-4c4b-45a1-95d9-dc47690378a3/styles.css">
+<script src="_ds/nocturne-4fd0b114-4c4b-45a1-95d9-dc47690378a3/_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--color-bg);}a{color:var(--color-accent);}a:hover{color:var(--color-accent-300);}</style>
+</helmet>
+<div style="padding:56px;display:flex;flex-direction:column;gap:72px;font-variant-numeric:tabular-nums;color:var(--color-text);">
+
+<header style="display:flex;flex-direction:column;gap:6px;max-width:760px;">
+  <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent);">FlightWatch · propozycja UI</div>
+  <h1 style="margin:0;font-size:42px;font-weight:500;">Bali – zima 2026/27</h1>
+  <p style="margin:0;color:var(--color-neutral-400);font-size:15px;text-wrap:pretty;">Telegram (MVP): alerty, komendy bota, raporty, alerty techniczne. Panel webowy (sesja 6). Wszystkie kwoty dla 2 dorosłych + dziecka, w PLN. Scenariusz danych: środa 4.11.2026.</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:28px;">
+  <h2 style="margin:0;font-size:25px;font-weight:500;">Telegram</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:44px;align-items:flex-start;">
+
+    <!-- 01 KUP -->
+    <div data-screen-label="01 Alert KUP" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">01 · Alert KUP</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>08:03</span><span>5G · 82%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;">
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:7px;box-shadow:inset 3px 0 0 var(--color-accent);">
+              <div style="font-weight:600;letter-spacing:0.02em;">🟢 KUP · WAW → DPS</div>
+              <div style="display:flex;flex-direction:column;">
+                <span style="font-size:22px;font-weight:600;line-height:1.2;">10 840 zł</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">do zapłaty za 3 os. · 3 980 zł za dorosłego · próg 11 000 zł</span>
+              </div>
+              <div style="display:flex;flex-direction:column;">
+                <span>Qatar Airways · 1 przesiadka w Dosze</span>
+                <span style="color:var(--color-neutral-300);">→ wt 22.12 Warszawa 15:55 · śr 23.12 Denpasar 09:30 (18 h 35)</span>
+                <span style="color:var(--color-neutral-300);">← pt 20.03 Denpasar 19:50 · sob 21.03 Warszawa 09:15 (19 h 25)</span>
+              </div>
+              <div style="display:flex;flex-direction:column;">
+                <span>Zmiana powrotu: 600 zł/os. + różnica taryfy</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">Bagaż 3×23 kg i podręczny w cenie · miejsca obok siebie +240 zł (wliczone)</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">Cena live sprzed 4 min · potwierdzona</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:2px;padding-top:6px;border-top:1px solid var(--color-divider);">
+                <span style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-400);">Top 3</span>
+                <span>1. Kompromis · WAW · 10 840 zł · 38 h · 1 przes.</span>
+                <span>2. Najszybsza · BER · 11 510 zł · 36,5 h · 1 przes.</span>
+                <span>3. Najtańsza · WAW · 10 790 zł · 47 h · 2 przes. ⚠ warunki nieznane</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">08:02</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+              <div style="grid-column:span 2;padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Rezerwuj w Qatar ↗</div>
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Pełne top 3</div>
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Kupione ✓</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 BLISKO + TERMIN -->
+    <div data-screen-label="02 BLISKO i TERMIN" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">02 · BLISKO (raz dziennie) i TERMIN (8.11)</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>20:41</span><span>5G · 64%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;">
+            <div style="align-self:center;font-size:11px;padding:2px 10px;border-radius:10px;background:var(--color-neutral-800);color:var(--color-neutral-200);">środa, 4 listopada</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-weight:600;">🟡 BLISKO · 180 zł nad progiem</div>
+              <div><span style="font-size:18px;font-weight:600;">11 180 zł</span> <span style="color:var(--color-neutral-400);font-size:12px;">za 3 os. · 4 090 zł za dorosłego</span></div>
+              <span style="color:var(--color-neutral-300);">Turkish · WAW 21.12 → DPS · 2 przesiadki · 23 h 40</span>
+              <span style="color:var(--color-neutral-400);font-size:12px;">⚠ Warunki zmiany powrotu nieznane – nie może dać KUP. Sprawdź taryfę na stronie.</span>
+              <span style="color:var(--color-neutral-400);font-size:12px;">Mediana 14 dni: 12 050 zł · Google: cena niska</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">20:31</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Otwórz ofertę ↗</div>
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Top 3</div>
+            </div>
+            <div style="align-self:center;font-size:11px;padding:2px 10px;border-radius:10px;background:var(--color-neutral-800);color:var(--color-neutral-200);">niedziela, 8 listopada</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:6px;box-shadow:inset 3px 0 0 var(--color-neutral-400);">
+              <div style="font-weight:600;">⏳ TERMIN · 7 dni do 15.11</div>
+              <span style="color:var(--color-neutral-300);">Nie było oferty ≤ 11 000 zł. Najlepsze opcje dziś:</span>
+              <div style="display:flex;flex-direction:column;gap:4px;">
+                <div style="display:flex;justify-content:space-between;gap:8px;"><span>Najtańsza · WAW 21.12</span><span style="font-weight:600;">11 240 zł</span></div>
+                <div style="display:flex;justify-content:space-between;gap:8px;"><span>Kompromis · WAW 22.12</span><span style="font-weight:600;">11 460 zł</span></div>
+                <div style="display:flex;justify-content:space-between;gap:8px;"><span>Najszybsza · BER 21.12</span><span style="font-weight:600;">11 530 zł</span></div>
+              </div>
+              <span style="color:var(--color-neutral-400);font-size:12px;">Trend 7 dni: −2,9%. Kompromis jest 4,2% nad progiem i ma elastyczny powrót.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">18:00</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 MISTAKE + status -->
+    <div data-screen-label="03 MISTAKE_FARE i /status" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">03 · MISTAKE_FARE i /status</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>11:20</span><span>5G · 71%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;">
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:6px;box-shadow:inset 3px 0 0 var(--color-accent);">
+              <div style="font-weight:600;">⚡ MISTAKE FARE · −54% od mediany</div>
+              <div><span style="font-size:18px;font-weight:600;">5 520 zł</span> <span style="color:var(--color-neutral-400);font-size:12px;">za 3 os. · mediana 12 050 zł</span></div>
+              <span style="color:var(--color-neutral-300);">Etihad · GDN 27.12 → DPS · 1 przes. w Abu Zabi</span>
+              <span style="color:var(--color-neutral-400);font-size:12px;">Potwierdzona live 2 min temu. Takie ceny znikają w godzinach – linia może anulować bilet.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">10:58</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;display:grid;grid-template-columns:1fr;gap:4px;">
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Rezerwuj w Etihad ↗</div>
+            </div>
+            <div style="align-self:flex-end;background:var(--color-accent-800);color:var(--color-accent-100);border-radius:14px 14px 4px 14px;padding:6px 11px;font-size:13px;">/status</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:5px;">
+              <div style="font-weight:600;">Status · Bali – zima 2026/27</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 12px;">
+                <span style="color:var(--color-neutral-400);">Ostatni skan</span><span>dziś 07:30 · pełny · 192 zap. ✓</span>
+                <span style="color:var(--color-neutral-400);">Najlepsza dziś</span><span>11 180 zł (BLISKO)</span>
+                <span style="color:var(--color-neutral-400);">Mediana 14 d</span><span>12 050 zł · −7,2%</span>
+                <span style="color:var(--color-neutral-400);">Google</span><span>cena niska (typowo 11,8–14,2 tys.)</span>
+                <span style="color:var(--color-neutral-400);">Budżet API</span><span>Ignav 908/8000 · SerpApi 9/250</span>
+                <span style="color:var(--color-neutral-400);">Następny</span><span>19:30 potwierdzenie top 20</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">11:19</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 top3 -->
+    <div data-screen-label="04 /top3" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">04 · /top3</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>21:05</span><span>Wi-Fi · 58%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;">
+            <div style="align-self:flex-end;background:var(--color-accent-800);color:var(--color-accent-100);border-radius:14px 14px 4px 14px;padding:6px 11px;font-size:13px;">/top3</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:9px;">
+              <div style="font-weight:600;">Top 3 · skan 19:30</div>
+              <div style="display:flex;flex-direction:column;gap:1px;">
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--color-accent-300);font-weight:500;">💰 Najtańsza</span><span style="font-weight:600;">11 180 zł</span></div>
+                <span>Turkish · WAW 21.12 / 25.03</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">23 h 40 · 2 przes. (IST, SIN) · nocna przesiadka</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">⚠ warunki zmiany nieznane · K 14 805</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:1px;">
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--color-accent-300);font-weight:500;">⚡ Najszybsza</span><span style="font-weight:600;">11 510 zł</span></div>
+                <span>Emirates · BER 21.12 / 20.03</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">17 h 50 · 1 przes. (DXB) · dojazd 900 zł</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">zmiana powrotu 450 zł/os. · K 13 505</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:1px;">
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--color-accent-300);font-weight:500;">⚖️ Kompromis</span><span style="font-weight:600;">11 420 zł</span></div>
+                <span>Qatar · WAW 22.12 / 20.03</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">18 h 35 · 1 przes. (DOH) · dojazd 200 zł</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">zmiana powrotu 600 zł/os. · K 12 757 (najniższy)</span>
+              </div>
+              <span style="color:var(--color-neutral-500);font-size:11px;">Kwoty za 3 os. z bagażem i miejscami. K = kwota + dojazd + czas + kary.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">21:05</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;">
+              <div style="padding:8px 4px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Turkish ↗</div>
+              <div style="padding:8px 4px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Emirates ↗</div>
+              <div style="padding:8px 4px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Qatar ↗</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 kupione + budzet -->
+    <div data-screen-label="05 /kupione i /budzet" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">05 · /kupione (z potwierdzeniem) i /budzet</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>08:21</span><span>5G · 80%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;">
+            <div style="align-self:flex-end;background:var(--color-accent-800);color:var(--color-accent-100);border-radius:14px 14px 4px 14px;padding:6px 11px;font-size:13px;">/budzet</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:7px;">
+              <div style="font-weight:600;">Budżet API · listopad</div>
+              <div style="display:flex;flex-direction:column;gap:3px;">
+                <div style="display:flex;justify-content:space-between;"><span>Ignav</span><span>908 / 8 000 · 11%</span></div>
+                <div style="height:5px;border-radius:3px;background:var(--color-neutral-800);"><div style="width:11%;height:100%;border-radius:3px;background:var(--color-accent);"></div></div>
+                <span style="color:var(--color-neutral-400);font-size:12px;">Prognoza na koniec miesiąca: 6 600 · rezerwa 1 200</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:3px;">
+                <div style="display:flex;justify-content:space-between;"><span>SerpApi</span><span>9 / 250 · 4%</span></div>
+                <div style="height:5px;border-radius:3px;background:var(--color-neutral-800);"><div style="width:4%;height:100%;border-radius:3px;background:var(--color-accent);"></div></div>
+              </div>
+              <span style="color:var(--color-neutral-400);font-size:12px;">fast-flights: 0 / 30 dziś (zapas)</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">08:19</div>
+            </div>
+            <div style="align-self:flex-end;background:var(--color-accent-800);color:var(--color-accent-100);border-radius:14px 14px 4px 14px;padding:6px 11px;font-size:13px;">/kupione</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-weight:600;">Zakończyć obserwację „Bali – zima 2026/27”?</div>
+              <span style="color:var(--color-neutral-300);">Przestanę wysyłać alerty zakupu. Włączę śledzenie zmiany daty powrotu.</span>
+              <span style="color:var(--color-neutral-400);font-size:12px;">Potwierdzenie ważne 10 min.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">08:20</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Tak, kupione</div>
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-neutral-700);color:var(--color-neutral-300);font-size:12px;text-align:center;font-weight:500;">Anuluj</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:4px;">
+              <div style="font-weight:600;">✅ Zapisane. Udanej podróży!</div>
+              <span style="color:var(--color-neutral-400);font-size:12px;">Alerty zakupu wyłączone. Dam znać, gdy dopłata za zmianę powrotu się zmieni.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">08:21</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 raporty -->
+    <div data-screen-label="06 Raporty" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">06 · Raport dzienny (20:30) i tygodniowy (nd 18:00)</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>18:02</span><span>Wi-Fi · 77%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;">
+            <div style="align-self:center;font-size:11px;padding:2px 10px;border-radius:10px;background:var(--color-neutral-800);color:var(--color-neutral-200);">sobota, 31 października</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:5px;">
+              <div style="font-weight:600;">Dzień · 31.10</div>
+              <span>Najlepsza: <b>11 640 zł</b> (−120 zł vs wczoraj)</span>
+              <span style="color:var(--color-neutral-400);font-size:12px;">Do progu brakuje 640 zł (5,8%) · 212 zapytań · bez błędów</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">20:30</div>
+            </div>
+            <div style="align-self:center;font-size:11px;padding:2px 10px;border-radius:10px;background:var(--color-neutral-800);color:var(--color-neutral-200);">niedziela, 1 listopada</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:8px;">
+              <div style="font-weight:600;">📊 Tydzień 26.10 – 1.11</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                <div style="display:flex;flex-direction:column;padding:6px 8px;border-radius:8px;background:var(--color-bg);"><span style="font-size:11px;color:var(--color-neutral-400);">Najlepsza</span><span style="font-weight:600;">11 590 zł</span></div>
+                <div style="display:flex;flex-direction:column;padding:6px 8px;border-radius:8px;background:var(--color-bg);"><span style="font-size:11px;color:var(--color-neutral-400);">Mediana</span><span style="font-weight:600;">12 120 zł</span></div>
+                <div style="display:flex;flex-direction:column;padding:6px 8px;border-radius:8px;background:var(--color-bg);"><span style="font-size:11px;color:var(--color-neutral-400);">Trend</span><span style="font-weight:600;">−4,1% / tydz.</span></div>
+                <div style="display:flex;flex-direction:column;padding:6px 8px;border-radius:8px;background:var(--color-bg);"><span style="font-size:11px;color:var(--color-neutral-400);">Do terminu</span><span style="font-weight:600;">14 dni</span></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:2px;">
+                <span style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-400);">Najtańsze lotnisko</span>
+                <span>WAW 11 590 · BER 11 620 · KRK 11 980 · GDN 12 230</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:2px;">
+                <span style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-400);">Najtańsze daty wylotu</span>
+                <span>21.12 i 22.12 · najdrożej 29–30.12</span>
+              </div>
+              <span style="color:var(--color-neutral-300);">Przy obecnym trendzie próg 11 000 zł możliwy ok. 12.11. Google ocenia ceny jako niskie.</span>
+              <span style="color:var(--color-neutral-500);font-size:11px;">Skany 14/14 ✓ · Ignav w tym mies. 908</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">18:00</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 admin -->
+    <div data-screen-label="07 Alerty techniczne" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">07 · Alerty techniczne 🛠</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>09:12</span><span>5G · 90%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;font-family:ui-monospace,Menlo,monospace;">
+            <div style="align-self:flex-start;width:94%;background:var(--color-neutral-900);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:12px;line-height:1.5;display:flex;flex-direction:column;gap:3px;">
+              <span style="font-weight:600;">🛠 Budżet Ignav 80%</span>
+              <span style="color:var(--color-neutral-300);">6 400 / 8 000 · 24.11. Przy obecnym tempie 100% ok. 29.11 → dalej fast-flights.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">24.11 07:41</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-neutral-900);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:12px;line-height:1.5;display:flex;flex-direction:column;gap:3px;">
+              <span style="font-weight:600;">🛠 Błędy parsowania 23%</span>
+              <span style="color:var(--color-neutral-300);">scan full 07:30 · 44/192 · ignav: nowe pole fare_brand? Surowe odpowiedzi w data/raw/2026-11-25.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">25.11 07:36</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-neutral-900);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:12px;line-height:1.5;display:flex;flex-direction:column;gap:3px;">
+              <span style="font-weight:600;">🛠 Kurs NBP sprzed 4 dni</span>
+              <span style="color:var(--color-neutral-300);">USD 3,94 z 21.11. Bez decyzji KUP do nowego kursu.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">25.11 07:30</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-neutral-900);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:12px;line-height:1.5;display:flex;flex-direction:column;gap:3px;">
+              <span style="font-weight:600;">🛠 SerpApi 401</span>
+              <span style="color:var(--color-neutral-300);">Klucz odrzucony. Ocena Google pominięta. Następne przypomnienie za 24 h.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">26.11 08:00</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-neutral-900);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:12px;line-height:1.5;display:flex;flex-direction:column;gap:3px;box-shadow:inset 3px 0 0 var(--color-accent);">
+              <span style="font-weight:600;">🛠 Brak skanu od 26 h</span>
+              <span style="color:var(--color-neutral-300);">Ostatni udany: 26.11 07:30. healthchecks: scan_full DOWN. Sprawdź: systemctl status flightwatch-scan-full.timer</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">27.11 09:31</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 08 start -->
+    <div data-screen-label="08 /start i pusty stan" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">08 · /start, /help i stan przed pierwszym skanem</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>21:14</span><span>Wi-Fi · 66%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;">
+            <div style="align-self:flex-end;background:var(--color-accent-800);color:var(--color-accent-100);border-radius:14px 14px 4px 14px;padding:6px 11px;font-size:13px;">/start</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-weight:600;">Cześć! Obserwuję jedną podróż:</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 12px;">
+                <span style="color:var(--color-neutral-400);">Trasa</span><span>WAW · KRK · GDN · BER → Bali</span>
+                <span style="color:var(--color-neutral-400);">Pasażerowie</span><span>2 dorosłych + dziecko (4)</span>
+                <span style="color:var(--color-neutral-400);">Daty</span><span>wylot 20–31.12 · powrót 15–31.03</span>
+                <span style="color:var(--color-neutral-400);">Próg KUP</span><span>11 000 zł z bagażem i miejscami</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">21:14</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:3px;">
+              <div style="font-weight:600;margin-bottom:2px;">Komendy</div>
+              <span><span style="color:var(--color-accent-300);">/status</span> – ostatni skan, najlepsza kwota, budżet</span>
+              <span><span style="color:var(--color-accent-300);">/top3</span> – najtańsza, najszybsza, kompromis</span>
+              <span><span style="color:var(--color-accent-300);">/budzet</span> – zużycie API</span>
+              <span><span style="color:var(--color-accent-300);">/kupione</span> – kończy alerty zakupu</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">21:14</div>
+            </div>
+            <div style="align-self:flex-end;background:var(--color-accent-800);color:var(--color-accent-100);border-radius:14px 14px 4px 14px;padding:6px 11px;font-size:13px;">/top3</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:4px;">
+              <span>Jeszcze brak danych. Pierwszy skan: nd 11.10, 07:30.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">21:15</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 KUP again / expired -->
+    <div data-screen-label="09 KUP ponownie i cena wygasła" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">09 · Cena wygasła i ponowny KUP (spadek ≥ 3%)</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>07:44</span><span>5G · 91%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;">
+            <div style="align-self:center;font-size:11px;padding:2px 10px;border-radius:10px;background:var(--color-neutral-800);color:var(--color-neutral-200);">piątek, 6 listopada</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:4px;">
+              <div style="font-weight:600;">ℹ️ Cena z alertu 08:02 wygasła</div>
+              <span style="color:var(--color-neutral-300);">Qatar · WAW 22.12 – teraz 11 260 zł (+420 zł). Nie jest już KUP.</span>
+              <span style="color:var(--color-neutral-400);font-size:12px;">Następne potwierdzenie: 19:30.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">19:34</div>
+            </div>
+            <div style="align-self:center;font-size:11px;padding:2px 10px;border-radius:10px;background:var(--color-neutral-800);color:var(--color-neutral-200);">sobota, 7 listopada</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:7px;box-shadow:inset 3px 0 0 var(--color-accent);">
+              <div style="font-weight:600;letter-spacing:0.02em;">🟢 KUP ponownie · −3,1%</div>
+              <div style="display:flex;flex-direction:column;">
+                <span style="font-size:22px;font-weight:600;line-height:1.2;">10 500 zł</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">za 3 os. · 3 860 zł za dorosłego · poprzedni KUP 10 840 zł</span>
+              </div>
+              <div style="display:flex;flex-direction:column;">
+                <span>Ta sama oferta: Qatar · WAW 22.12 / 20.03</span>
+                <span style="color:var(--color-neutral-300);">1 przesiadka w Dosze · 18 h 35 / 19 h 25</span>
+                <span>Zmiana powrotu: 600 zł/os. + różnica taryfy</span>
+                <span style="color:var(--color-neutral-400);font-size:12px;">Cena live sprzed 3 min · bagaż i miejsca wliczone</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">07:43</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+              <div style="grid-column:span 2;padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Rezerwuj w Qatar ↗</div>
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Pełne top 3</div>
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Kupione ✓</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 post purchase -->
+    <div data-screen-label="10 Po zakupie" style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:12px;color:var(--color-neutral-400);">10 · Po zakupie: zmiana daty powrotu</div>
+      <div style="width:340px;height:740px;border-radius:44px;padding:10px;background:var(--color-neutral-900);box-shadow:var(--shadow-md);display:flex;flex-direction:column;">
+        <div style="flex:1;border-radius:34px;overflow:hidden;background:var(--color-bg);display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;padding:12px 24px 4px;font-size:12px;font-weight:500;background:var(--color-surface);"><span>18:06</span><span>5G · 70%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:var(--color-surface);">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--color-accent-800);color:var(--color-accent-200);display:grid;place-items:center;font-size:12px;font-weight:500;">FW</div>
+            <div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;overflow:hidden;">
+            <div style="align-self:center;font-size:11px;padding:2px 10px;border-radius:10px;background:var(--color-neutral-800);color:var(--color-neutral-200);">niedziela, 15 listopada</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:7px;">
+              <div style="font-weight:600;">✈️ Twój powrót · tydzień 46</div>
+              <span style="color:var(--color-neutral-300);">Kupione: Qatar, powrót pt 20.03 z Denpasar 19:50.</span>
+              <div style="display:flex;flex-direction:column;gap:3px;">
+                <span style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-400);">Dopłata za zmianę, 3 os.</span>
+                <div style="display:flex;justify-content:space-between;"><span>pn 15.03</span><span>1 800 zł · 3 miejsca</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>śr 25.03</span><span>2 160 zł · 9 miejsc</span></div>
+                <div style="display:flex;justify-content:space-between;color:var(--color-neutral-500);"><span>wt 31.03</span><span>brak miejsc w taryfie</span></div>
+              </div>
+              <span style="color:var(--color-neutral-400);font-size:12px;">25.03: −360 zł vs zeszły tydzień. Sprawdzam raz w tygodniu.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">18:00</div>
+            </div>
+            <div style="align-self:flex-start;width:94%;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-accent-700);color:var(--color-accent-300);font-size:12px;text-align:center;font-weight:500;">Zarządzaj ↗</div>
+              <div style="padding:8px 6px;border-radius:8px;border:1px solid var(--color-neutral-700);color:var(--color-neutral-300);font-size:12px;text-align:center;font-weight:500;">Wycisz</div>
+            </div>
+            <div style="align-self:center;font-size:11px;padding:2px 10px;border-radius:10px;background:var(--color-neutral-800);color:var(--color-neutral-200);">wtorek, 17 listopada</div>
+            <div style="align-self:flex-start;width:94%;background:var(--color-surface);border-radius:14px 14px 14px 4px;padding:9px 11px 6px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:4px;box-shadow:inset 3px 0 0 var(--color-accent);">
+              <div style="font-weight:600;">✈️ Miejsca na 31.03 wróciły</div>
+              <span style="color:var(--color-neutral-300);">Dopłata za zmianę: 2 400 zł za 3 os.</span>
+              <div style="font-size:10px;color:var(--color-neutral-500);text-align:right;">07:36</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;padding:8px 10px 16px;background:var(--color-surface);">
+            <div style="padding:6px 10px;border-radius:14px;background:var(--color-accent-800);color:var(--color-accent-200);font-size:12px;font-weight:500;">/ Menu</div>
+            <div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section data-screen-label="11 Panel · Przegląd" style="display:flex;flex-direction:column;gap:28px;">
+  <h2 style="margin:0;font-size:25px;font-weight:500;">Panel webowy <span style="font-size:15px;color:var(--color-neutral-400);">sesja 6</span></h2>
+  <div style="width:1360px;border-radius:14px;background:var(--color-bg);box-shadow:var(--shadow-md);overflow:hidden;display:flex;flex-direction:column;">
+
+    <div style="display:flex;align-items:center;gap:22px;padding:14px 24px;background:var(--color-surface);">
+      <span style="font-size:18px;font-weight:500;">FlightWatch</span>
+      <span style="font-size:11px;padding:3px 10px;border-radius:6px;background:var(--color-accent-800);color:var(--color-accent-100);">waw-dps-2026 · 2+1</span>
+      <div style="display:flex;gap:18px;font-size:14px;margin-left:12px;">
+        <span style="color:var(--color-accent);">Przegląd</span>
+        <span style="color:var(--color-neutral-300);">Oferty</span>
+        <span style="color:var(--color-neutral-300);">Skany</span>
+        <span style="color:var(--color-neutral-300);">Reguły taryf</span>
+        <span style="color:var(--color-neutral-300);">Konfiguracja</span>
+      </div>
+      <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-400);">śr 4.11 · ostatni skan 07:30 · następny 19:30</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:340px minmax(0,1fr);gap:20px;padding:24px;">
+      <div style="display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:8px;background:var(--color-surface);">
+        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent);">Decyzja dziś</span>
+        <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:42px;font-weight:500;line-height:1;">BLISKO</span></div>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <span style="font-size:25px;font-weight:500;">11 180 zł</span>
+          <span style="font-size:13px;color:var(--color-neutral-400);">180 zł (1,6%) nad progiem 11 000 zł</span>
+        </div>
+        <div style="font-size:13px;padding:8px 10px;border-radius:8px;border:1px solid var(--color-neutral-700);color:var(--color-neutral-200);">Nie kwalifikuje się do KUP: warunki zmiany powrotu nieznane (brak reguły w fare_rules.yaml dla TK / EcoFly).</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 10px;font-size:13px;">
+          <div style="display:flex;flex-direction:column;"><span style="font-size:11px;color:var(--color-neutral-400);">Najlepsza kwalifikująca</span><span>11 420 zł</span></div>
+          <div style="display:flex;flex-direction:column;"><span style="font-size:11px;color:var(--color-neutral-400);">Mediana 14 dni</span><span>12 050 zł</span></div>
+          <div style="display:flex;flex-direction:column;"><span style="font-size:11px;color:var(--color-neutral-400);">Ocena Google</span><span>niska</span></div>
+          <div style="display:flex;flex-direction:column;"><span style="font-size:11px;color:var(--color-neutral-400);">Do terminu 15.11</span><span>11 dni</span></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:8px;background:var(--color-surface);">
+        <div style="display:flex;align-items:baseline;gap:16px;">
+          <span style="font-size:17px;font-weight:500;">Najlepsza kwota dziennie</span>
+          <div style="display:flex;gap:14px;font-size:12px;color:var(--color-neutral-400);margin-left:auto;">
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:2px;background:var(--color-accent);"></span>kwota</span>
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:0;border-top:2px dashed var(--color-neutral-400);"></span>mediana 14 d</span>
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:2px;background:var(--color-accent-300);"></span>próg 11 000</span>
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:8px;background:var(--color-accent-900);"></span>BLISKO ≤ 11 770</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:52px minmax(0,1fr);gap:8px;">
+          <div style="position:relative;height:230px;font-size:11px;color:var(--color-neutral-500);">
+            <sc-for list="{{ yTicks }}" as="t" hint-placeholder-count="4">
+              <span style="position:absolute;right:0;top:{{ t.top }};transform:translateY(-50%);">{{ t.label }}</span>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <svg viewBox="0 0 800 230" preserveAspectRatio="none" style="width:100%;height:230px;display:block;">
+              <sc-if value="{{ showNearBand }}" hint-placeholder-val="{{ true }}">
+                <rect x="0" y="{{ bandY }}" width="800" height="{{ bandH }}" fill="var(--color-accent-900)"></rect>
+              </sc-if>
+              <line x1="0" x2="800" y1="{{ thrY }}" y2="{{ thrY }}" stroke="var(--color-accent-300)" stroke-width="1.5"></line>
+              <polyline points="{{ medianPts }}" fill="none" stroke="var(--color-neutral-400)" stroke-width="1.5" stroke-dasharray="5 4"></polyline>
+              <polyline points="{{ bestPts }}" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linejoin="round"></polyline>
+              <circle cx="{{ lastX }}" cy="{{ lastY }}" r="5" fill="var(--color-bg)" stroke="var(--color-accent)" stroke-width="2.5"></circle>
+            </svg>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--color-neutral-500);"><span>11.10</span><span>18.10</span><span>25.10</span><span>1.11</span><span>4.11</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:20px;padding:0 24px 24px;">
+      <div style="display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:8px;background:var(--color-surface);">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span style="font-size:17px;font-weight:500;">Data wylotu × lotnisko</span>
+          <span style="font-size:12px;color:var(--color-neutral-400);">najniższa wartość z wszystkich powrotów, tys. zł</span>
+          <div style="display:inline-flex;margin-left:auto;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden;font-size:13px;">
+            <div onClick="{{ setKwota }}" style="padding:6px 12px;cursor:pointer;color:{{ segKwotaColor }};box-shadow:{{ segKwotaShadow }};">Kwota do zapłaty</div>
+            <div onClick="{{ setK }}" style="padding:6px 12px;cursor:pointer;border-left:1px solid var(--color-divider);color:{{ segKColor }};box-shadow:{{ segKShadow }};">Koszt K</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:56px repeat(12,minmax(0,1fr));gap:4px;font-size:12px;">
+          <span></span>
+          <sc-for list="{{ days }}" as="d" hint-placeholder-count="12">
+            <span style="text-align:center;font-size:11px;color:var(--color-neutral-400);">{{ d }}</span>
+          </sc-for>
+        </div>
+        <sc-for list="{{ heatRows }}" as="row" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:56px repeat(12,minmax(0,1fr));gap:4px;font-size:12px;">
+            <span style="align-self:center;font-weight:500;">{{ row.code }}</span>
+            <sc-for list="{{ row.cells }}" as="c" hint-placeholder-count="12">
+              <div title="{{ c.title }}" style="height:38px;border-radius:4px;display:grid;place-items:center;background:{{ c.bg }};color:{{ c.fg }};box-shadow:{{ c.ring }};">{{ c.label }}</div>
+            </sc-for>
+          </div>
+        </sc-for>
+        <div style="display:flex;gap:18px;font-size:12px;color:var(--color-neutral-400);">
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:3px;box-shadow:inset 0 0 0 1.5px var(--color-accent-300);"></span>{{ ringLegend }}</span>
+          <span>jaśniej = taniej</span>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;padding:18px;border-radius:8px;background:var(--color-surface);">
+        <span style="font-size:17px;font-weight:500;">Budżet i zdrowie</span>
+        <sc-for list="{{ budgets }}" as="b" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:5px;font-size:13px;">
+            <div style="display:flex;justify-content:space-between;"><span>{{ b.name }}</span><span style="color:var(--color-neutral-300);">{{ b.used }} / {{ b.limit }}</span></div>
+            <div style="position:relative;height:6px;border-radius:3px;background:var(--color-neutral-800);">
+              <div style="position:absolute;left:0;top:0;bottom:0;width:{{ b.pct }};border-radius:3px;background:var(--color-accent);"></div>
+              <div style="position:absolute;top:-3px;bottom:-3px;left:{{ b.proj }};width:2px;background:var(--color-neutral-400);"></div>
+            </div>
+            <span style="font-size:11px;color:var(--color-neutral-500);">{{ b.note }}</span>
+          </div>
+        </sc-for>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-400);">Ostatnie przebiegi</span>
+          <sc-for list="{{ runs }}" as="r" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:86px 1fr auto;gap:8px;">
+              <span style="color:var(--color-neutral-400);">{{ r.when }}</span>
+              <span>{{ r.what }}</span>
+              <span style="color:{{ r.color }};">{{ r.status }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span style="font-size:11px;padding:3px 10px;border-radius:6px;background:var(--color-neutral-800);color:var(--color-neutral-100);">heartbeat ✓</span>
+          <span style="font-size:11px;padding:3px 10px;border-radius:6px;background:var(--color-neutral-800);color:var(--color-neutral-100);">bot online ✓</span>
+          <span style="font-size:11px;padding:3px 10px;border-radius:6px;background:var(--color-neutral-800);color:var(--color-neutral-100);">NBP 4.11 ✓</span>
+          <span style="font-size:11px;padding:3px 10px;border-radius:6px;background:var(--color-neutral-800);color:var(--color-neutral-100);">dysk 23%</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:20px;padding:0 24px 24px;">
+      <div style="display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:8px;background:var(--color-surface);">
+        <div style="display:flex;align-items:baseline;gap:12px;">
+          <span style="font-size:17px;font-weight:500;">Ranking wg K</span>
+          <span style="font-size:12px;color:var(--color-neutral-400);">skan 07:30 · kliknij wiersz</span>
+        </div>
+        <div style="display:grid;grid-template-columns:28px 120px minmax(0,1fr) 110px 70px 96px 96px 120px;gap:10px;padding:6px 8px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-400);">
+          <span>#</span><span>Opcja</span><span>Lot</span><span>Daty</span><span>Czas</span><span style="text-align:right;">Kwota</span><span style="text-align:right;">K</span><span>Powrót</span>
+        </div>
+        <sc-for list="{{ ranking }}" as="o" hint-placeholder-count="5">
+          <div onClick="{{ o.select }}" style="display:grid;grid-template-columns:28px 120px minmax(0,1fr) 110px 70px 96px 96px 120px;gap:10px;padding:10px 8px;border-radius:6px;font-size:13px;cursor:pointer;align-items:center;background:{{ o.rowBg }};box-shadow:{{ o.rowRing }};">
+            <span style="color:var(--color-neutral-400);">{{ o.rank }}</span>
+            <span style="color:var(--color-accent-300);">{{ o.label }}</span>
+            <span>{{ o.origin }} · {{ o.airline }} <span style="color:var(--color-neutral-400);">via {{ o.via }}</span></span>
+            <span style="color:var(--color-neutral-300);">{{ o.dates }}</span>
+            <span>{{ o.hoursLabel }}</span>
+            <span style="text-align:right;">{{ o.kwotaLabel }}</span>
+            <span style="text-align:right;font-weight:600;">{{ o.kLabel }}</span>
+            <span style="color:{{ o.flexColor }};">{{ o.flexShort }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:8px;background:var(--color-surface);box-shadow:var(--shadow-sm);">
+        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent);">Szczegół oferty · {{ sel.label }}</span>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <span style="font-size:20px;font-weight:500;">{{ sel.origin }} → DPS · {{ sel.airline }}</span>
+          <span style="font-size:13px;color:var(--color-neutral-400);">{{ sel.stopsLabel }} · cena live sprzed {{ sel.age }} min</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+          <span>→ {{ sel.out }}</span>
+          <span>← {{ sel.back }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-400);">Skład K · {{ sel.kLabel }}</span>
+          <div style="display:flex;height:10px;border-radius:3px;overflow:hidden;gap:2px;">
+            <div style="width:{{ sel.pKwota }};background:var(--color-accent);"></div>
+            <div style="width:{{ sel.pDojazd }};background:var(--color-accent-600);"></div>
+            <div style="width:{{ sel.pCzas }};background:var(--color-neutral-500);"></div>
+            <div style="width:{{ sel.pKary }};background:var(--color-neutral-700);"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:3px 10px;font-size:13px;">
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:var(--color-accent);"></span>Kwota do zapłaty</span><span>{{ sel.kwotaLabel }}</span>
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:var(--color-accent-600);"></span>Dojazd</span><span>{{ sel.dojazdLabel }}</span>
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:var(--color-neutral-500);"></span>Czas ({{ sel.hoursLabel }} × 30 zł)</span><span>{{ sel.czasLabel }}</span>
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:var(--color-neutral-700);"></span>Kary · {{ sel.karyWhy }}</span><span>{{ sel.karyLabel }}</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-400);">Warunki i KUP</span>
+          <span>{{ sel.flex }}</span>
+          <span style="color:var(--color-neutral-300);">{{ sel.qualifies }}</span>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <div style="padding:6px 12px;border-radius:8px;border:1px solid var(--color-accent);color:var(--color-accent);font-size:14px;font-weight:500;cursor:pointer;" style-hover="background:color-mix(in srgb, var(--color-accent) 12%, transparent);">Rezerwuj ↗</div>
+          <div style="padding:6px 12px;border-radius:8px;border:1px solid var(--color-divider);font-size:14px;font-weight:500;cursor:pointer;" style-hover="background:color-mix(in srgb, var(--color-text) 7%, transparent);">Potwierdź live</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section data-screen-label="12 Panel · Oferty" style="display:flex;flex-direction:column;gap:16px;">
+  <div style="font-size:12px;color:var(--color-neutral-400);">12 · Panel · Oferty</div>
+  <div style="width:1360px;border-radius:14px;background:var(--color-bg);box-shadow:var(--shadow-md);overflow:hidden;display:flex;flex-direction:column;">
+    <div style="display:flex;align-items:center;gap:22px;padding:14px 24px;background:var(--color-surface);">
+      <span style="font-size:18px;font-weight:500;">FlightWatch</span>
+      <span style="font-size:11px;padding:3px 10px;border-radius:6px;background:var(--color-accent-800);color:var(--color-accent-100);">waw-dps-2026 · 2+1</span>
+      <div style="display:flex;gap:18px;font-size:14px;margin-left:12px;">
+        <span style="color:var(--color-neutral-300);">Przegląd</span><span style="color:var(--color-accent);">Oferty</span><span style="color:var(--color-neutral-300);">Skany</span><span style="color:var(--color-neutral-300);">Reguły taryf</span><span style="color:var(--color-neutral-300);">Konfiguracja</span>
+      </div>
+      <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-400);">śr 4.11 · ostatni skan 07:30 · następny 19:30</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;padding:24px;">
+      <div style="display:flex;align-items:baseline;gap:14px;">
+        <h3 style="margin:0;font-size:25px;font-weight:500;">Oferty</h3>
+        <span style="font-size:13px;color:var(--color-neutral-400);">{{ offerCount }} z 12 · ostatnie 24 h · kwoty za 3 os. z bagażem i miejscami</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:12px;color:var(--color-neutral-400);">Lotnisko</span>
+          <div style="display:inline-flex;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden;font-size:13px;">
+            <sc-for list="{{ originChips }}" as="c" hint-placeholder-count="5">
+              <div onClick="{{ c.pick }}" style="padding:6px 12px;cursor:pointer;color:{{ c.color }};box-shadow:{{ c.ring }};">{{ c.label }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <div onClick="{{ toggleQual }}" style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;">
+          <div style="width:32px;height:18px;border-radius:9px;padding:2px;background:{{ qualTrack }};display:flex;justify-content:{{ qualJustify }};"><div style="width:14px;height:14px;border-radius:50%;background:var(--color-text);"></div></div>
+          <span>Tylko mogące dać KUP</span>
+        </div>
+        <span style="margin-left:auto;font-size:13px;color:var(--color-neutral-400);">Sortuj: K rosnąco</span>
+      </div>
+      <div style="display:flex;flex-direction:column;border-radius:8px;background:var(--color-surface);padding:8px 12px;">
+        <div style="display:grid;grid-template-columns:56px minmax(0,1.4fr) 110px 70px 50px 104px 104px 104px 120px 80px 150px;gap:10px;padding:8px 6px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-400);">
+          <span>Skąd</span><span>Linia · przesiadki</span><span>Daty</span><span>Czas</span><span>Prz.</span><span style="text-align:right;">Kwota</span><span style="text-align:right;">Za doros.</span><span style="text-align:right;">K</span><span>Zmiana powr.</span><span>Live</span><span>Status</span>
+        </div>
+        <sc-for list="{{ offerRows }}" as="r" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:56px minmax(0,1.4fr) 110px 70px 50px 104px 104px 104px 120px 80px 150px;gap:10px;padding:10px 6px;font-size:13px;align-items:center;border-top:1px solid var(--color-neutral-900);" style-hover="background:color-mix(in srgb, var(--color-text) 4%, transparent);">
+            <span style="font-weight:500;">{{ r.origin }}</span>
+            <span>{{ r.airline }} <span style="color:var(--color-neutral-400);">via {{ r.via }}</span></span>
+            <span style="color:var(--color-neutral-300);">{{ r.dates }}</span>
+            <span>{{ r.hLabel }}</span>
+            <span>{{ r.stops }}</span>
+            <span style="text-align:right;">{{ r.kwotaLabel }}</span>
+            <span style="text-align:right;color:var(--color-neutral-300);">{{ r.adultLabel }}</span>
+            <span style="text-align:right;font-weight:600;">{{ r.kLabel }}</span>
+            <span style="color:var(--color-neutral-300);">{{ r.flex }}</span>
+            <span style="color:var(--color-neutral-400);">{{ r.age }}</span>
+            <span style="justify-self:start;font-size:11px;padding:3px 10px;border-radius:6px;background:{{ r.tagBg }};color:{{ r.tagFg }};">{{ r.tag }}</span>
+          </div>
+        </sc-for>
+        <sc-if value="{{ noOffers }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:28px 6px;font-size:14px;color:var(--color-neutral-400);">Brak ofert dla tych filtrów.</div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="13 Panel · Skany" style="display:flex;flex-direction:column;gap:16px;">
+  <div style="font-size:12px;color:var(--color-neutral-400);">13 · Panel · Skany</div>
+  <div style="width:1360px;border-radius:14px;background:var(--color-bg);box-shadow:var(--shadow-md);overflow:hidden;display:flex;flex-direction:column;">
+    <div style="display:flex;align-items:center;gap:22px;padding:14px 24px;background:var(--color-surface);">
+      <span style="font-size:18px;font-weight:500;">FlightWatch</span>
+      <span style="font-size:11px;padding:3px 10px;border-radius:6px;background:var(--color-accent-800);color:var(--color-accent-100);">waw-dps-2026 · 2+1</span>
+      <div style="display:flex;gap:18px;font-size:14px;margin-left:12px;">
+        <span style="color:var(--color-neutral-300);">Przegląd</span><span style="color:var(--color-neutral-300);">Oferty</span><span style="color:var(--color-accent);">Skany</span><span style="color:var(--color-neutral-300);">Reguły taryf</span><span style="color:var(--color-neutral-300);">Konfiguracja</span>
+      </div>
+      <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-400);">śr 4.11 · ostatni skan 07:30 · następny 19:30</span>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:20px;padding:24px;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <h3 style="margin:0;font-size:25px;font-weight:500;">Skany</h3>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;">
+          <div style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:8px;background:var(--color-surface);"><span style="font-size:11px;color:var(--color-neutral-400);">Skany od 11.10</span><span style="font-size:20px;font-weight:500;">50 / 50</span></div>
+          <div style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:8px;background:var(--color-surface);"><span style="font-size:11px;color:var(--color-neutral-400);">Trafienia cache</span><span style="font-size:20px;font-weight:500;">18%</span></div>
+          <div style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:8px;background:var(--color-surface);"><span style="font-size:11px;color:var(--color-neutral-400);">Błędy parsowania</span><span style="font-size:20px;font-weight:500;">0,6%</span></div>
+          <div style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:8px;background:var(--color-surface);"><span style="font-size:11px;color:var(--color-neutral-400);">Awaryjnie fast-flights</span><span style="font-size:20px;font-weight:500;">3 razy</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;border-radius:8px;background:var(--color-surface);padding:8px 12px;">
+          <div style="display:grid;grid-template-columns:110px 130px 90px 70px 80px 80px minmax(0,1fr) 60px;gap:10px;padding:8px 6px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-400);">
+            <span>Start</span><span>Tryb</span><span style="text-align:right;">Zapytania</span><span style="text-align:right;">Cache</span><span style="text-align:right;">Błędy</span><span style="text-align:right;">Czas</span><span>Dostawcy</span><span>Stan</span>
+          </div>
+          <sc-for list="{{ scanRows }}" as="s" hint-placeholder-count="8">
+            <div onClick="{{ s.select }}" style="display:grid;grid-template-columns:110px 130px 90px 70px 80px 80px minmax(0,1fr) 60px;gap:10px;padding:10px 6px;font-size:13px;align-items:center;cursor:pointer;border-radius:6px;background:{{ s.bg }};box-shadow:{{ s.ring }};">
+              <span style="color:var(--color-neutral-300);">{{ s.when }}</span>
+              <span>{{ s.mode }}</span>
+              <span style="text-align:right;">{{ s.q }}</span>
+              <span style="text-align:right;color:var(--color-neutral-300);">{{ s.cache }}</span>
+              <span style="text-align:right;">{{ s.err }}</span>
+              <span style="text-align:right;color:var(--color-neutral-300);">{{ s.dur }}</span>
+              <span style="color:var(--color-neutral-300);">{{ s.prov }}</span>
+              <span style="color:{{ s.stColor }};">{{ s.st }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:8px;background:var(--color-surface);box-shadow:var(--shadow-sm);align-self:start;">
+        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent);">Przebieg · {{ scanSel.when }}</span>
+        <span style="font-size:20px;font-weight:500;">{{ scanSel.mode }}</span>
+        <div style="display:flex;flex-direction:column;">
+          <sc-for list="{{ scanSel.steps }}" as="st" hint-placeholder-count="9">
+            <div style="display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:10px;padding:6px 0;font-size:13px;align-items:start;">
+              <span style="width:10px;height:10px;margin-top:4px;border-radius:50%;border:1.5px solid {{ st.dot }};background:{{ st.fill }};"></span>
+              <div style="display:flex;flex-direction:column;"><span>{{ st.name }}</span><span style="font-size:12px;color:var(--color-neutral-400);">{{ st.note }}</span></div>
+              <span style="color:var(--color-neutral-400);">{{ st.t }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <div style="padding:6px 12px;border-radius:8px;border:1px solid var(--color-divider);font-size:14px;font-weight:500;cursor:pointer;" style-hover="background:color-mix(in srgb, var(--color-text) 7%, transparent);">Surowe odpowiedzi</div>
+          <div style="padding:6px 12px;border-radius:8px;border:1px solid var(--color-divider);font-size:14px;font-weight:500;cursor:pointer;" style-hover="background:color-mix(in srgb, var(--color-text) 7%, transparent);">Log</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="14 Panel · Reguły taryf" style="display:flex;flex-direction:column;gap:16px;">
+  <div style="font-size:12px;color:var(--color-neutral-400);">14 · Panel · Reguły taryf (fare_rules.yaml)</div>
+  <div style="width:1360px;border-radius:14px;background:var(--color-bg);box-shadow:var(--shadow-md);overflow:hidden;display:flex;flex-direction:column;">
+    <div style="display:flex;align-items:center;gap:22px;padding:14px 24px;background:var(--color-surface);">
+      <span style="font-size:18px;font-weight:500;">FlightWatch</span>
+      <span style="font-size:11px;padding:3px 10px;border-radius:6px;background:var(--color-accent-800);color:var(--color-accent-100);">waw-dps-2026 · 2+1</span>
+      <div style="display:flex;gap:18px;font-size:14px;margin-left:12px;">
+        <span style="color:var(--color-neutral-300);">Przegląd</span><span style="color:var(--color-neutral-300);">Oferty</span><span style="color:var(--color-neutral-300);">Skany</span><span style="color:var(--color-accent);">Reguły taryf</span><span style="color:var(--color-neutral-300);">Konfiguracja</span>
+      </div>
+      <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-400);">śr 4.11 · ostatni skan 07:30 · następny 19:30</span>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:20px;padding:24px;">
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <h3 style="margin:0;font-size:25px;font-weight:500;">Reguły taryf</h3>
+          <span style="font-size:13px;color:var(--color-neutral-400);">Bagaż, miejsca i warunki dla linii i marki taryfy. Bez reguły oferta nie może dać KUP.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;padding:14px 16px;border-radius:8px;border:1px solid var(--color-accent-700);">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-300);">Brakujące reguły · blokują KUP</span>
+          <sc-for list="{{ missingRules }}" as="m" hint-placeholder-count="2">
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) 140px 160px auto;gap:12px;align-items:center;font-size:13px;">
+              <span style="font-weight:500;">{{ m.name }}</span>
+              <span style="color:var(--color-neutral-300);">{{ m.count }}</span>
+              <span style="color:var(--color-neutral-300);">najlepsza {{ m.best }}</span>
+              <div onClick="{{ m.select }}" style="padding:5px 12px;border-radius:8px;border:1px solid var(--color-accent);color:var(--color-accent);font-size:13px;font-weight:500;cursor:pointer;" style-hover="background:color-mix(in srgb, var(--color-accent) 12%, transparent);">Dodaj regułę</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;border-radius:8px;background:var(--color-surface);padding:8px 12px;">
+          <div style="display:grid;grid-template-columns:minmax(0,1.3fr) 100px 70px 100px minmax(0,1.2fr) 110px 80px;gap:10px;padding:8px 6px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-400);">
+            <span>Linia · taryfa</span><span>Bagaż</span><span>Podr.</span><span>Miejsce</span><span>Zmiana</span><span>Zwrot</span><span>Aktual.</span>
+          </div>
+          <sc-for list="{{ ruleRows }}" as="r" hint-placeholder-count="6">
+            <div onClick="{{ r.select }}" style="display:grid;grid-template-columns:minmax(0,1.3fr) 100px 70px 100px minmax(0,1.2fr) 110px 80px;gap:10px;padding:10px 6px;font-size:13px;align-items:center;cursor:pointer;border-radius:6px;background:{{ r.bg }};box-shadow:{{ r.ring }};">
+              <span><span style="font-weight:500;">{{ r.code }}</span> {{ r.brand }}</span>
+              <span>{{ r.bag }}</span><span>{{ r.carry }}</span><span>{{ r.seat }}</span><span>{{ r.change }}</span><span style="color:var(--color-neutral-300);">{{ r.refund }}</span><span style="color:var(--color-neutral-400);">{{ r.updated }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:8px;background:var(--color-surface);box-shadow:var(--shadow-sm);align-self:start;">
+        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent);">{{ ruleSel.kicker }}</span>
+        <span style="font-size:20px;font-weight:500;">{{ ruleSel.title }}</span>
+        <sc-for list="{{ ruleSel.fields }}" as="f" hint-placeholder-count="7">
+          <div style="display:flex;flex-direction:column;gap:4px;">
+            <span style="font-size:12px;color:var(--color-neutral-300);">{{ f.label }}</span>
+            <div style="min-height:36px;padding:7px 10px;font-size:14px;border-radius:8px;background:var(--color-bg);border:1px solid var(--color-divider);color:{{ f.color }};">{{ f.value }}</div>
+          </div>
+        </sc-for>
+        <span style="font-size:12px;color:var(--color-neutral-400);">{{ ruleSel.hint }}</span>
+        <div style="display:flex;gap:8px;">
+          <div style="padding:6px 12px;border-radius:8px;border:1px solid var(--color-accent);color:var(--color-accent);font-size:14px;font-weight:500;cursor:pointer;" style-hover="background:color-mix(in srgb, var(--color-accent) 12%, transparent);">Zapisz w fare_rules.yaml</div>
+          <div style="padding:6px 12px;border-radius:8px;border:1px solid var(--color-divider);font-size:14px;font-weight:500;cursor:pointer;" style-hover="background:color-mix(in srgb, var(--color-text) 7%, transparent);">Strona taryfy ↗</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="15 Panel · Konfiguracja" style="display:flex;flex-direction:column;gap:16px;">
+  <div style="font-size:12px;color:var(--color-neutral-400);">15 · Panel · Konfiguracja (config.yaml, podgląd)</div>
+  <div style="width:1360px;border-radius:14px;background:var(--color-bg);box-shadow:var(--shadow-md);overflow:hidden;display:flex;flex-direction:column;">
+    <div style="display:flex;align-items:center;gap:22px;padding:14px 24px;background:var(--color-surface);">
+      <span style="font-size:18px;font-weight:500;">FlightWatch</span>
+      <span style="font-size:11px;padding:3px 10px;border-radius:6px;background:var(--color-accent-800);color:var(--color-accent-100);">waw-dps-2026 · 2+1</span>
+      <div style="display:flex;gap:18px;font-size:14px;margin-left:12px;">
+        <span style="color:var(--color-neutral-300);">Przegląd</span><span style="color:var(--color-neutral-300);">Oferty</span><span style="color:var(--color-neutral-300);">Skany</span><span style="color:var(--color-neutral-300);">Reguły taryf</span><span style="color:var(--color-accent);">Konfiguracja</span>
+      </div>
+      <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-400);">śr 4.11 · ostatni skan 07:30 · następny 19:30</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;padding:24px;">
+      <div style="display:flex;align-items:flex-end;gap:16px;">
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <h3 style="margin:0;font-size:25px;font-weight:500;">Konfiguracja</h3>
+          <span style="font-size:13px;color:var(--color-neutral-400);">Jedyne źródło wartości to config.yaml na serwerze. Panel tylko pokazuje. Sekrety są w .env i tu się nie pojawiają.</span>
+        </div>
+        <span style="margin-left:auto;font-size:12px;padding:3px 10px;border-radius:6px;background:var(--color-neutral-800);color:var(--color-neutral-100);font-family:ui-monospace,Menlo,monospace;">config_hash 3f9a1c · 3.10 22:41</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;">
+        <sc-for list="{{ configGroups }}" as="g" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:8px;background:var(--color-surface);">
+            <span style="font-size:17px;font-weight:500;">{{ g.title }}</span>
+            <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px 16px;font-size:13px;">
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="5">
+                <span style="color:var(--color-neutral-400);">{{ it.k }}</span>
+                <span>{{ it.v }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:8px;background:var(--color-surface);">
+        <div style="display:flex;align-items:baseline;gap:12px;">
+          <span style="font-size:17px;font-weight:500;">Budżet Ignav – plan miesiąca</span>
+          <span style="font-size:12px;color:var(--color-neutral-400);">4 lotniska × 12 dat × 4 powroty = 192 rano + top 20 wieczorem</span>
+        </div>
+        <div style="display:flex;height:14px;border-radius:4px;overflow:hidden;gap:2px;background:var(--color-neutral-900);">
+          <div style="width:72%;background:var(--color-accent);"></div>
+          <div style="width:8%;background:var(--color-accent-600);"></div>
+          <div style="width:15%;background:var(--color-neutral-600);"></div>
+        </div>
+        <div style="display:flex;gap:24px;font-size:13px;flex-wrap:wrap;">
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:var(--color-accent);"></span>skany pełne 5 760</span>
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:var(--color-accent-600);"></span>potwierdzenia 600</span>
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:2px;background:var(--color-neutral-600);"></span>rezerwa 15% · 1 200</span>
+          <span style="color:var(--color-neutral-400);">zapas 440 · limit 8 000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heatMetric&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;kwota&quot;,&quot;K&quot;],&quot;default&quot;:&quot;kwota&quot;,&quot;tsType&quot;:&quot;'kwota' | 'K'&quot;,&quot;section&quot;:&quot;Panel&quot;},&quot;showNearBand&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Panel&quot;}}">
+class Component extends DCLogic {
+  state = { metric: null, selId: 'qr' };
+  fmt(n) { return Math.round(n).toLocaleString('pl-PL').replace(/,/g, ' ') + ' zł'; }
+  extraVals() {
+    const st = this.state, on = 'var(--color-accent)', off = 'var(--color-neutral-300)', ring = 'inset 0 0 0 1px var(--color-accent)';
+    const selBg = 'var(--color-accent-900)', selRing = 'inset 0 0 0 1px var(--color-accent-700)';
+    // offers
+    const origin = st.offOrigin || 'all', qualOnly = !!st.offQual;
+    const dj = { WAW: 200, KRK: 600, GDN: 600, BER: 900 };
+    const raw = [
+      ['WAW','Turkish','IST, SIN','21.12 / 25.03',47.5,2,11180,'nieznane','unknown','14 min'],
+      ['WAW','Qatar','DOH','22.12 / 20.03',37.9,1,11420,'600 zł/os.','ok','14 min'],
+      ['BER','Emirates','DXB','21.12 / 20.03',36.5,1,11510,'450 zł/os.','ok','14 min'],
+      ['BER','Qatar','DOH','22.12 / 20.03',38.2,1,11600,'600 zł/os.','ok','3 h'],
+      ['KRK','Lufthansa','FRA, SIN','22.12 / 20.03',45,2,11820,'700 zł/os.','ok','14 min'],
+      ['WAW','Emirates','DXB','20.12 / 15.03',37.1,1,11900,'450 zł/os.','ok','3 h'],
+      ['KRK','Turkish','IST','22.12 / 25.03',40.2,1,12000,'nieznane','unknown','14 min'],
+      ['GDN','Qatar','DOH','22.12 / 15.03',39,1,12080,'600 zł/os.','ok','14 min'],
+      ['BER','Singapore','SIN','23.12 / 20.03',41.5,1,12140,'bezpłatna','ok','12 h'],
+      ['WAW','KLM','AMS, SIN','21.12 / 31.03',44.8,2,12230,'—','estimated','12 h'],
+      ['GDN','Lufthansa','FRA, SIN','21.12 / 20.03',46.3,2,12390,'700 zł/os.','ok','14 min'],
+      ['KRK','Qatar','DOH','27.12 / 25.03',38.6,1,12950,'600 zł/os.','ok','3 h']
+    ];
+    const tags = { ok: ['może dać KUP', 'var(--color-accent-800)', 'var(--color-accent-100)'], unknown: ['warunki nieznane', 'var(--color-neutral-800)', 'var(--color-neutral-100)'], estimated: ['cena szacowana', 'var(--color-neutral-800)', 'var(--color-neutral-100)'] };
+    const offerRows = raw.map(([o, a, via, dates, h, stops, kw, flex, s, age]) => {
+      const kary = (stops > 1 ? 600 : 0) + (s === 'unknown' ? 1000 : 0);
+      const K = kw + dj[o] + Math.round(h * 30) + kary;
+      return { origin: o, airline: a, via, dates, hLabel: String(h).replace('.', ',') + ' h', stops, kwota: kw, kwotaLabel: this.fmt(kw), adultLabel: this.fmt(Math.round(kw * 0.367 / 10) * 10), K, kLabel: this.fmt(K), flex, age, s, tag: tags[s][0], tagBg: tags[s][1], tagFg: tags[s][2] };
+    }).filter(r => (origin === 'all' || r.origin === origin) && (!qualOnly || r.s === 'ok')).sort((a, b) => a.K - b.K);
+    const originChips = ['all', 'WAW', 'KRK', 'GDN', 'BER'].map(c => ({ label: c === 'all' ? 'Wszystkie' : c, color: c === origin ? on : off, ring: c === origin ? ring : 'none', pick: () => this.setState({ offOrigin: c }) }));
+    // scans
+    const scanId = st.scanSel || 's1';
+    const scans = [
+      { id: 's1', when: '4.11 07:30', mode: 'Pełny', q: '192', cache: '0', err: '0', dur: '3:12', prov: 'Ignav', st: 'OK' },
+      { id: 's2', when: '3.11 19:30', mode: 'Potwierdzenie', q: '20', cache: '0', err: '0', dur: '0:24', prov: 'Ignav', st: 'OK' },
+      { id: 's3', when: '3.11 10:14', mode: 'Spadek ≥ 5%', q: '1', cache: '—', err: '0', dur: '0:03', prov: 'Ignav', st: 'OK' },
+      { id: 's4', when: '3.11 07:30', mode: 'Pełny', q: '192', cache: '12', err: '4', dur: '3:40', prov: 'Ignav', st: 'OK' },
+      { id: 's5', when: '2.11 19:30', mode: 'Potwierdzenie', q: '20', cache: '0', err: '0', dur: '0:22', prov: 'Ignav', st: 'OK' },
+      { id: 's6', when: '2.11 07:30', mode: 'Pełny', q: '192', cache: '0', err: '31', dur: '5:58', prov: 'Ignav → fast-flights (30)', st: 'Uwaga' },
+      { id: 's7', when: '1.11 19:30', mode: 'Potwierdzenie', q: '20', cache: '0', err: '0', dur: '0:25', prov: 'Ignav', st: 'OK' },
+      { id: 's8', when: '1.11 07:30', mode: 'Pełny', q: '192', cache: '0', err: '0', dur: '3:08', prov: 'Ignav', st: 'OK' }
+    ];
+    const scanRows = scans.map(s => ({ ...s, bg: s.id === scanId ? selBg : 'transparent', ring: s.id === scanId ? selRing : 'none', stColor: s.st === 'OK' ? 'var(--color-accent-300)' : 'var(--color-neutral-100)', select: () => this.setState({ scanSel: s.id }) }));
+    const sc = scans.find(s => s.id === scanId);
+    const warn = sc.id === 's6';
+    const mk = (name, note, t, w) => ({ name, note, t, dot: w ? 'var(--color-neutral-200)' : 'var(--color-accent)', fill: w ? 'transparent' : 'var(--color-accent-800)' });
+    const isConf = sc.mode !== 'Pełny';
+    const steps = [
+      mk('Blokada i wpis w runs', 'flock · run #' + (140 + scans.length - scans.indexOf(sc)), '0,1 s'),
+      mk('Kurs NBP', 'USD 3,98 · EUR 4,31 · tabela A z dnia', '0,4 s'),
+      mk('Planer', isConf ? sc.q + ' zapytań z top 24 h' : '4 lotniska × 12 dat × 4 powroty = 192', '0,2 s'),
+      mk('Zapytania do dostawców', warn ? '161 Ignav OK · 31 timeout → fast-flights 30' : sc.q + ' wywołań · cache ' + sc.cache, sc.dur, warn),
+      mk('Normalizacja', warn ? '1 błąd parsowania (fast-flights)' : 'ceny grupy w PLN, czasy UTC + lokalne', '1,1 s'),
+      mk('Ocena', 'filtry → kwota do zapłaty → K', '0,6 s'),
+      mk('Potwierdzenie spadku', sc.id === 's3' ? 'Turkish WAW 21.12 −5,4% · live potwierdzona' : 'brak spadku ≥ 5%', '—'),
+      mk('Decyzja i alerty', sc.id === 's2' ? 'BLISKO wysłane 20:31' : 'bez nowych alertów (deduplikacja)', '0,2 s'),
+      mk('Zamknięcie i heartbeat', 'healthchecks: ' + (sc.mode === 'Pełny' ? 'scan_full' : 'scan_confirm') + ' OK', '0,3 s')
+    ];
+    // rules
+    const ruleId = st.ruleSel || 'QR';
+    const rules = [
+      { id: 'QR', code: 'QR', airline: 'Qatar Airways', brand: 'Economy Classic', bag: '2×23 kg', carry: '7 kg', seat: '80 zł/os.', change: '600 zł/os. + różnica', refund: 'za opłatą', updated: '12.10' },
+      { id: 'EKF', code: 'EK', airline: 'Emirates', brand: 'Economy Flex', bag: '1×30 kg', carry: '7 kg', seat: 'w cenie', change: '450 zł/os.', refund: 'za opłatą', updated: '12.10' },
+      { id: 'EKS', code: 'EK', airline: 'Emirates', brand: 'Economy Saver', bag: '1×25 kg', carry: '7 kg', seat: '120 zł/os.', change: 'niedozwolona', refund: 'nie', updated: '12.10' },
+      { id: 'LH', code: 'LH', airline: 'Lufthansa', brand: 'Economy Classic', bag: '1×23 kg', carry: '8 kg', seat: '90 zł/os.', change: '700 zł/os.', refund: 'nie', updated: '14.10' },
+      { id: 'SQ', code: 'SQ', airline: 'Singapore Airlines', brand: 'Economy Standard', bag: '1×30 kg', carry: '7 kg', seat: '60 zł/os.', change: 'bezpłatna', refund: 'za opłatą', updated: '20.10' },
+      { id: 'EY', code: 'EY', airline: 'Etihad', brand: 'Economy Value', bag: '1×23 kg', carry: '7 kg', seat: '100 zł/os.', change: '500 zł/os.', refund: 'nie', updated: '2.11' }
+    ];
+    const missing = [
+      { id: 'TK', code: 'TK', airline: 'Turkish Airlines', brand: 'EcoFly', count: '14 ofert w 24 h', best: '11 180 zł' },
+      { id: 'KL', code: 'KL', airline: 'KLM', brand: 'Economy Light', count: '3 oferty w 24 h', best: '12 230 zł' }
+    ];
+    const ruleRows = rules.map(r => ({ ...r, bg: r.id === ruleId ? selBg : 'transparent', ring: r.id === ruleId ? selRing : 'none', select: () => this.setState({ ruleSel: r.id }) }));
+    const missingRules = missing.map(m => ({ ...m, name: `${m.code} ${m.brand}`, select: () => this.setState({ ruleSel: m.id }) }));
+    const r = rules.find(x => x.id === ruleId), m = missing.find(x => x.id === ruleId);
+    const empty = 'var(--color-neutral-500)', full = 'var(--color-text)';
+    const f = (label, v) => ({ label, value: v ?? 'uzupełnij', color: v ? full : empty });
+    const src = r || m;
+    const ruleSel = {
+      kicker: r ? 'Edycja reguły' : 'Nowa reguła',
+      title: `${src.airline} · ${src.brand}`,
+      fields: [f('Linia (kod IATA)', src.code), f('Marka taryfy', src.brand), f('Bagaż rejestrowany / os.', r && r.bag), f('Bagaż podręczny / os.', r && r.carry), f('Miejsca obok siebie / os.', r && r.seat), f('Zmiana daty powrotu', r && r.change), f('Zwrot', r && r.refund)],
+      hint: r ? 'Zmiana przelicza kwotę do zapłaty w następnym skanie.' : `Po zapisaniu ${m.count.split(' ')[0]} ofert przejdzie ponowną ocenę. Najlepsza może dać KUP.`
+    };
+    // config
+    const configGroups = [
+      { title: 'Podróż', items: [{ k: 'Pasażerowie', v: '2 dorosłych + dziecko (4)' }, { k: 'Wylot z', v: 'WAW, KRK, GDN, BER' }, { k: 'Dolot (sesja 6)', v: 'WMI, VIE, PRG, BUD' }, { k: 'Wylot', v: '20–31.12.2026' }, { k: 'Przylot DPS', v: '05:00–12:59' }, { k: 'Powrót', v: '15, 20, 25, 31.03.2027' }, { k: 'Bez przylotu', v: '00:00–05:59' }] },
+      { title: 'Decyzja', items: [{ k: 'Próg KUP', v: '11 000 zł' }, { k: 'BLISKO', v: 'do +7% (11 770 zł)' }, { k: 'Termin', v: '15.11 · ostrzeżenie 8.11' }, { k: 'Wiek ceny live', v: '≤ 60 min' }, { k: 'Ponowny KUP', v: 'po spadku ≥ 3%' }, { k: 'Mistake fare', v: '< 50% mediany, ≥ 7 dni' }] },
+      { title: 'Koszt K', items: [{ k: 'Godzina podróży', v: '30 zł' }, { k: 'Dodatkowa przesiadka', v: '300 zł' }, { k: 'Ponad 30 h', v: '100 zł/h' }, { k: 'Nocna przesiadka', v: '400 zł (01–05)' }, { k: 'Brak elastyczności', v: '1 000 zł' }, { k: 'Nieznane warunki', v: 'jak brak elastyczności' }] },
+      { title: 'Filtry', items: [{ k: 'Maks. czas', v: '24 h (do 30 h z karą)' }, { k: 'Przesiadki', v: 'maks. 2, preferowana 1' }, { k: 'Min. przesiadka', v: '120 min' }, { k: 'Bagaż / os.', v: '1 rejestrowany + 1 podręczny' }, { k: 'Miejsca', v: 'obok siebie' }] },
+      { title: 'Harmonogram', items: [{ k: 'Skan pełny', v: '07:30' }, { k: 'Potwierdzenie', v: '19:30 · top 20' }, { k: 'Google', v: '08:00' }, { k: 'Raport dzienny', v: '20:30' }, { k: 'Raport tygodniowy', v: 'niedziela 18:00' }, { k: 'Spadek → live', v: '≥ 5%' }] },
+      { title: 'Dostawcy', items: [{ k: 'Ignav', v: 'główny · 8 000/mies.' }, { k: 'SerpApi', v: 'ocena Google · 250/mies.' }, { k: 'fast-flights', v: 'awaryjny · 30/przebieg' }, { k: 'Travelpayouts', v: 'wyłączony' }, { k: 'Cache', v: '60 min' }] }
+    ];
+    return {
+      offerRows, originChips, offerCount: offerRows.length, noOffers: offerRows.length === 0,
+      toggleQual: () => this.setState({ offQual: !qualOnly }),
+      qualTrack: qualOnly ? 'var(--color-accent)' : 'var(--color-neutral-700)', qualJustify: qualOnly ? 'flex-end' : 'flex-start',
+      scanRows, scanSel: { when: sc.when, mode: `${sc.mode} · ${sc.q} zapytań`, steps },
+      ruleRows, missingRules, ruleSel, configGroups
+    };
+  }
+  renderVals() {
+    const metric = this.state.metric ?? this.props.heatMetric ?? 'kwota';
+    const showNearBand = this.props.showNearBand ?? true;
+    // chart
+    const best = [12940,12880,12910,12750,12800,12690,12620,12700,12540,12480,12510,12390,12300,12350,12210,12120,12180,11990,11920,11870,11760,11640,11590,11420,11180];
+    const med = best.map((_, i) => { const w = best.slice(Math.max(0, i - 13), i + 1).sort((a, b) => a - b); return w[Math.floor(w.length / 2)]; });
+    const lo = 10600, hi = 13200, H = 230, W = 800;
+    const y = v => H - ((v - lo) / (hi - lo)) * H;
+    const x = i => (i / (best.length - 1)) * (W - 8) + 4;
+    const pts = a => a.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+    const yTicks = [13000, 12000, 11000].map(v => ({ label: (v / 1000).toFixed(0) + ' tys.', top: (y(v) / H * 100) + '%' }));
+    // heatmap
+    const days = ['20.12','21.12','22.12','23.12','24.12','25.12','26.12','27.12','28.12','29.12','30.12','31.12'];
+    const raw = {
+      WAW: [11.9,11.18,11.42,12.1,12.6,12.4,12.0,12.3,12.8,13.1,12.9,12.5],
+      KRK: [12.3,12.0,11.82,12.5,13.0,12.8,12.3,12.6,13.2,13.4,13.1,12.7],
+      GDN: [12.6,12.4,12.08,12.8,13.3,13.0,12.7,12.9,13.5,13.7,13.3,13.0],
+      BER: [11.7,11.51,11.6,11.9,12.4,12.2,11.8,12.0,12.6,12.9,12.6,12.3]
+    };
+    const extra = { WAW: 1.33, KRK: 1.95, GDN: 1.77, BER: 1.99 };
+    const vals = Object.entries(raw).map(([code, arr]) => ({ code, arr: arr.map(v => metric === 'K' ? v + extra[code] : v) }));
+    const all = vals.flatMap(r => r.arr); const mn = Math.min(...all), mx = Math.max(...all);
+    const ringAt = metric === 'K' ? mn + 0.6 : 11.77;
+    const heatRows = vals.map(r => ({ code: r.code, cells: r.arr.map((v, i) => {
+      const t = (v - mn) / (mx - mn); const p = Math.round((1 - t) * 78 + 4);
+      return { label: v.toFixed(1).replace('.', ','), title: `${r.code} ${days[i]}: ${this.fmt(v * 1000)}`,
+        bg: `color-mix(in srgb, var(--color-accent-500) ${p}%, var(--color-bg))`,
+        fg: p > 55 ? 'var(--color-accent-100)' : 'var(--color-neutral-300)',
+        ring: v <= ringAt ? 'inset 0 0 0 1.5px var(--color-accent-200)' : 'none' };
+    }) }));
+    // ranking
+    const offers = [
+      { id: 'qr', label: 'Kompromis', origin: 'WAW', airline: 'Qatar', via: 'DOH', dates: '22.12 / 20.03', h: 37.9, stops: 1, kwota: 11420, dojazd: 200, kary: 0, karyWhy: 'brak', flexShort: '600 zł/os.', flex: 'Zmiana powrotu: 600 zł/os. + różnica taryfy (fare_rules: QR Economy Classic)', qual: true, age: 14, out: 'wt 22.12 Warszawa 15:55 → śr 23.12 Denpasar 09:30 · 18 h 35', back: 'pt 20.03 Denpasar 19:50 → sob 21.03 Warszawa 09:15 · 19 h 25' },
+      { id: 'ek', label: 'Najszybsza', origin: 'BER', airline: 'Emirates', via: 'DXB', dates: '21.12 / 20.03', h: 36.5, stops: 1, kwota: 11510, dojazd: 900, kary: 0, karyWhy: 'brak', flexShort: '450 zł/os.', flex: 'Zmiana powrotu: 450 zł/os. (fare_rules: EK Economy Flex)', qual: true, age: 14, out: 'pn 21.12 Berlin 14:20 → wt 22.12 Denpasar 10:10 · 17 h 50', back: 'pt 20.03 Denpasar 21:15 → sob 21.03 Berlin 08:55 · 18 h 40' },
+      { id: 'qr2', label: '—', origin: 'GDN', airline: 'Qatar', via: 'DOH', dates: '22.12 / 15.03', h: 39, stops: 1, kwota: 12080, dojazd: 600, kary: 0, karyWhy: 'brak', flexShort: '600 zł/os.', flex: 'Zmiana powrotu: 600 zł/os. + różnica taryfy', qual: true, age: 14, out: 'wt 22.12 Gdańsk 13:40 → śr 23.12 Denpasar 09:30 · 19 h 50', back: 'pn 15.03 Denpasar 19:50 → wt 16.03 Gdańsk 10:00 · 19 h 10' },
+      { id: 'lh', label: '—', origin: 'KRK', airline: 'Lufthansa', via: 'FRA, SIN', dates: '22.12 / 20.03', h: 45, stops: 2, kwota: 11820, dojazd: 600, kary: 600, karyWhy: '2 dodatkowe przesiadki', flexShort: '700 zł/os.', flex: 'Zmiana powrotu: 700 zł/os. (fare_rules: LH Economy Classic)', qual: true, age: 14, out: 'wt 22.12 Kraków 06:10 → śr 23.12 Denpasar 11:20 · 23 h 10', back: 'pt 20.03 Denpasar 17:30 → sob 21.03 Kraków 08:20 · 21 h 50' },
+      { id: 'tk', label: 'Najtańsza', origin: 'WAW', airline: 'Turkish', via: 'IST, SIN', dates: '21.12 / 25.03', h: 47.5, stops: 2, kwota: 11180, dojazd: 200, kary: 2000, karyWhy: 'przesiadki, noc, brak elastyczności', flexShort: 'nieznane', flex: 'Warunki zmiany nieznane – brak reguły TK EcoFly w fare_rules.yaml (kara 1 000 zł)', qual: false, age: 14, out: 'pn 21.12 Warszawa 19:05 → wt 22.12 Denpasar 18:45 · 23 h 40', back: 'czw 25.03 Denpasar 08:10 → pt 26.03 Warszawa 07:00 · 23 h 50' }
+    ].map(o => ({ ...o, czas: Math.round(o.h * 30) })).map(o => ({ ...o, K: o.kwota + o.dojazd + o.czas + o.kary })).sort((a, b) => a.K - b.K);
+    const ranking = offers.map((o, i) => {
+      const s = o.id === this.state.selId;
+      return { ...o, rank: i + 1, hoursLabel: o.h.toString().replace('.', ',') + ' h', kwotaLabel: this.fmt(o.kwota), kLabel: this.fmt(o.K),
+        flexColor: o.qual ? 'var(--color-neutral-300)' : 'var(--color-neutral-500)',
+        rowBg: s ? 'var(--color-accent-900)' : 'transparent', rowRing: s ? 'inset 0 0 0 1px var(--color-accent-700)' : 'none',
+        select: () => this.setState({ selId: o.id }) };
+    });
+    const o = ranking.find(r => r.id === this.state.selId) || ranking[0];
+    const pc = v => (v / o.K * 100).toFixed(1) + '%';
+    const sel = { ...o, stopsLabel: o.stops === 1 ? `1 przesiadka (${o.via})` : `2 przesiadki (${o.via})`,
+      dojazdLabel: this.fmt(o.dojazd), czasLabel: this.fmt(o.czas), karyLabel: this.fmt(o.kary),
+      pKwota: pc(o.kwota), pDojazd: pc(o.dojazd), pCzas: pc(o.czas), pKary: pc(o.kary),
+      qualifies: o.qual ? (o.kwota <= 11000 ? 'Kwalifikuje się do KUP.' : `Kwalifikuje się do KUP, ale ${this.fmt(o.kwota - 11000)} nad progiem.`) : 'Nie może wywołać KUP: nieznane warunki taryfy.' };
+    const on = 'var(--color-accent)', off = 'var(--color-neutral-300)', ring = 'inset 0 0 0 1px var(--color-accent)';
+    return {
+      showNearBand, yTicks, bestPts: pts(best), medianPts: pts(med),
+      thrY: y(11000), bandY: y(11770), bandH: y(11000) - y(11770),
+      lastX: x(best.length - 1), lastY: y(best[best.length - 1]),
+      days, heatRows,
+      ringLegend: metric === 'K' ? 'w granicach 600 zł od najniższego K' : 'w paśmie BLISKO (≤ 11 770 zł)',
+      setKwota: () => this.setState({ metric: 'kwota' }), setK: () => this.setState({ metric: 'K' }),
+      segKwotaColor: metric === 'kwota' ? on : off, segKwotaShadow: metric === 'kwota' ? ring : 'none',
+      segKColor: metric === 'K' ? on : off, segKShadow: metric === 'K' ? ring : 'none',
+      budgets: [
+        { name: 'Ignav', used: '908', limit: '8 000', pct: '11.4%', proj: '82.5%', note: 'kreska = prognoza na 30.11 (6 600) · alert przy 80%' },
+        { name: 'SerpApi', used: '9', limit: '250', pct: '3.6%', proj: '24%', note: 'prognoza 60 · 1–2 zapytania dziennie' }
+      ],
+      runs: [
+        { when: '4.11 07:30', what: 'pełny · 192 zap. · 3 min 12 s', status: '✓', color: 'var(--color-accent-300)' },
+        { when: '3.11 19:30', what: 'potwierdzenie · top 20', status: '✓', color: 'var(--color-accent-300)' },
+        { when: '3.11 10:14', what: 'spadek ≥ 5% · live 1 oferta', status: '✓', color: 'var(--color-accent-300)' },
+        { when: '3.11 07:30', what: 'pełny · 4 błędy parsowania (2%)', status: '!', color: 'var(--color-neutral-200)' },
+        { when: '2.11 19:30', what: 'potwierdzenie · top 20', status: '✓', color: 'var(--color-accent-300)' }
+      ],
+      ranking, sel, ...this.extraVals()
+    };
+  }
+}
+</script>
+</body>
+</html>
