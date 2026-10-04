@@ -1,0 +1,57 @@
+# Reguły taryf – edytowane z panelu (Reguły taryf). Kwoty za osobę.
+# SZACUNEK: wartości startowe z projektu UI – zweryfikuj na stronach linii przed startem zbierania (11.10).
+rules:
+- code: QR
+  airline: Qatar Airways
+  brand: Economy Classic
+  bag: 2×23 kg
+  carry: 7 kg
+  seat: 80 zł/os.
+  change: 600 zł/os. + różnica
+  refund: za opłatą
+  updated: '12.10'
+- code: EK
+  airline: Emirates
+  brand: Economy Flex
+  bag: 1×30 kg
+  carry: 7 kg
+  seat: w cenie
+  change: 450 zł/os.
+  refund: za opłatą
+  updated: '12.10'
+- code: EK
+  airline: Emirates
+  brand: Economy Saver
+  bag: 1×25 kg
+  carry: 7 kg
+  seat: 120 zł/os.
+  change: niedozwolona
+  refund: nie
+  updated: '12.10'
+- code: LH
+  airline: Lufthansa
+  brand: Economy Classic
+  bag: 1×23 kg
+  carry: 8 kg
+  seat: 90 zł/os.
+  change: 700 zł/os.
+  refund: nie
+  updated: '14.10'
+- code: SQ
+  airline: Singapore Airlines
+  brand: Economy Standard
+  bag: 1×30 kg
+  carry: 7 kg
+  seat: 60 zł/os.
+  change: bezpłatna
+  refund: za opłatą
+  updated: '20.10'
+- code: EY
+  airline: Etihad
+  brand: Economy Value
+  bag: 1×23 kg
+  carry: 7 kg
+  seat: 100 zł/os.
+  change: 500 zł/os.
+  refund: nie
+  updated: '2.11'

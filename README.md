@@ -23,3 +23,24 @@ The design medium is **HTML/CSS/JS** — these are prototypes, not production co
 - `README.md` — this file
 - `chats/` — conversation transcripts (read these!)
 - `project/` — the `Propozycje UI dla aplikacji` project files (HTML prototypes, assets, components)
+
+---
+
+# Implementacja (gałąź `feat/flightwatch-ui`)
+
+Projekt z `project/FlightWatch UI.dc.html` zbudowany w stacku z `CLAUDE.md` (Python 3.12, uv).
+
+| Część projektu | Kod |
+|---|---|
+| 01–10 Telegram: alerty, odpowiedzi bota, raporty, 🛠 | `flightwatch/alerts/format.py` – czyste formatery → `Message` (HTML Telegrama + przyciski inline, `to_api()` daje ciało `sendMessage`) |
+| Scenariusz z ekranów 01–10 | `flightwatch/alerts/preview.py` (`uv run python -m flightwatch.alerts.preview`) i strona `/telegram` w panelu |
+| 11–15 Panel: Przegląd, Oferty, Skany, Reguły taryf, Konfiguracja | `flightwatch/web/` (FastAPI + Jinja, CSS na tokenach Nocturne) – patrz `docs/adr-006-panel-fastapi-jinja.md` |
+| Formularz reguł taryf | `flightwatch/fare_rules.py` → `data/fare_rules.yaml` |
+
+```bash
+uv sync
+uv run flightwatch-panel          # http://127.0.0.1:8080
+uv run pytest && uv run ruff check . && uv run mypy
+```
+
+Panel pokazuje dane przykładowe (`flightwatch/web/demo.py`) do czasu powstania `db/repo.py`.

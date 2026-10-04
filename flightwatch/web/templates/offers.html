@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Oferty · FlightWatch{% endblock %}
+{% block content %}
+<div class="fw-pad fw-stack" style="gap:16px;">
+  <div style="display:flex;align-items:baseline;gap:14px;">
+    <h3 class="fw-h3">Oferty</h3>
+    <span class="fw-sub">{{ v.count }} z {{ v.total }} · ostatnie 24 h · kwoty za 3 os. z bagażem i miejscami</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span class="fw-note">Lotnisko</span>
+      <div class="fw-seg flat">
+        {% for c in v.chips %}<a href="{{ c.href }}" aria-pressed="{{ 'true' if c.on else 'false' }}">{{ c.label }}</a>{% endfor %}
+      </div>
+    </div>
+    <a class="fw-toggle" href="{{ v.qual_href }}" role="switch" aria-checked="{{ 'true' if v.qual_only else 'false' }}">
+      <span class="fw-toggle-track"><span class="fw-toggle-knob"></span></span>
+      <span>Tylko mogące dać KUP</span>
+    </a>
+    <span class="fw-sub" style="margin-left:auto;">Sortuj: K rosnąco</span>
+  </div>
+  <div class="fw-table">
+    <div class="fw-tr fw-th offer-cols">
+      <span>Skąd</span><span>Linia · przesiadki</span><span>Daty</span><span>Czas</span><span>Prz.</span><span class="num">Kwota</span><span class="num">Za doros.</span><span class="num">K</span><span>Zmiana powr.</span><span>Live</span><span>Status</span>
+    </div>
+    {% for r in v.rows %}{% set o = r.o %}
+    <div class="fw-tr ruled offer-cols">
+      <span style="font-weight:500;">{{ o.origin }}</span>
+      <span>{{ o.airline }} <span class="fw-muted">via {{ o.via }}</span></span>
+      <span class="fw-dim">{{ o.dates }}</span>
+      <span>{{ r.hours }}</span>
+      <span>{{ o.stops }}</span>
+      <span class="num">{{ r.payable }}</span>
+      <span class="num fw-dim">{{ r.adult }}</span>
+      <span class="num strong">{{ r.k }}</span>
+      <span class="fw-dim">{{ o.flex }}</span>
+      <span class="fw-muted">{{ o.age }}</span>
+      <span class="fw-chip {{ r.tag_kind }}" style="justify-self:start;">{{ r.tag }}</span>
+    </div>
+    {% else %}
+    <div style="padding:28px 6px;font-size:14px;color:var(--color-neutral-400);">Brak ofert dla tych filtrów.</div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

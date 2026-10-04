@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Konfiguracja · FlightWatch{% endblock %}
+{% block content %}
+<div class="fw-pad fw-stack" style="gap:20px;">
+  <div style="display:flex;align-items:flex-end;gap:16px;">
+    <div class="fw-stack" style="gap:4px;">
+      <h3 class="fw-h3">Konfiguracja</h3>
+      <span class="fw-sub">Jedyne źródło wartości to config.yaml na serwerze. Panel tylko pokazuje. Sekrety są w .env i tu się nie pojawiają.</span>
+    </div>
+    <span class="fw-chip mono" style="margin-left:auto;">{{ v.hash }}</span>
+  </div>
+  <div class="cfg-grid">
+    {% for title, items in v.groups %}
+    <section class="fw-card" style="gap:10px;">
+      <span class="fw-card-title">{{ title }}</span>
+      <div class="kv">{% for k, val in items %}<span class="fw-muted">{{ k }}</span><span>{{ val }}</span>{% endfor %}</div>
+    </section>
+    {% endfor %}
+  </div>
+  <section class="fw-card" style="gap:10px;">
+    <div style="display:flex;align-items:baseline;gap:12px;">
+      <span class="fw-card-title">Budżet Ignav – plan miesiąca</span>
+      <span class="fw-note">{{ v.plan.note }}</span>
+    </div>
+    <div class="fw-stacked" style="height:14px;border-radius:4px;background:var(--color-neutral-900);">
+      {% for s in v.plan.segments %}<div class="bg-{{ s.color }}" style="width:{{ s.width }};"></div>{% endfor %}
+    </div>
+    <div style="display:flex;gap:24px;font-size:13px;flex-wrap:wrap;">
+      {% for s in v.plan.segments %}<span class="fw-legend"><span class="sw bg-{{ s.color }}"></span>{{ s.label }}{% if loop.last %} ·{% endif %} {{ s.value }}</span>{% endfor %}
+      <span class="fw-muted">zapas {{ v.plan.spare }} · limit {{ v.plan.limit }}</span>
+    </div>
+  </section>
+</div>
+{% endblock %}

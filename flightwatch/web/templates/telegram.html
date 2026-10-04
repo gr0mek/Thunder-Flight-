@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Telegram · FlightWatch{% endblock %}
+{% block content %}
+<div class="tg-wrap">
+  <div class="fw-stack" style="gap:6px;max-width:760px;">
+    <h3 class="fw-h3">Wiadomości Telegrama</h3>
+    <span class="fw-sub">Podgląd wyjścia formaterów z <code>flightwatch/alerts/format.py</code> na scenariuszu z projektu. Kwoty dla 2 dorosłych + dziecka, w PLN.</span>
+  </div>
+  <div class="tg-grid">
+    {% for s in screens %}
+    <div class="fw-stack" style="gap:10px;">
+      <div class="tg-label">{{ s.number }} · {{ s.title }}</div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-status"><span>{{ s.clock }}</span><span>{{ s.status }}</span></div>
+          <div class="phone-head">
+            <div class="phone-avatar">FW</div>
+            <div class="fw-stack"><span style="font-size:14px;font-weight:500;">FlightWatch</span><span style="font-size:11px;color:var(--color-neutral-500);">bot</span></div>
+          </div>
+          <div class="phone-chat{% if s.admin %} tg-admin{% endif %}">
+            {% for it in s.items %}
+              {% if it is day %}<div class="tg-day">{{ preview.f.day_separator(it.day) }}</div>
+              {% elif it is user %}<div class="tg-user">{{ it.text }}</div>
+              {% else %}
+              <div class="tg-bot{% if it.stripe %} {{ it.stripe }}{% endif %}">{{ it.message.text | tg_html }}<div class="tg-time">{{ it.at }}</div></div>
+              {% if it.message.keyboard %}
+              <div class="tg-kb">
+                {% for row in it.message.keyboard %}<div class="tg-kb-row">{% for b in row %}<span class="{% if b.url and loop.first and row|length == 1 and b.text.startswith('Rezerwuj') %}primary{% elif b.callback in ('bought:no', 'mute:post_purchase') %}quiet{% elif b.callback == 'bought:yes' %}primary{% endif %}">{{ b.text }}</span>{% endfor %}</div>{% endfor %}
+              </div>
+              {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="phone-input"><div class="phone-menu">/ Menu</div><div style="flex:1;font-size:13px;color:var(--color-neutral-500);">Wiadomość</div></div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

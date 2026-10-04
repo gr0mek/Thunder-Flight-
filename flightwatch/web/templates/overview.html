@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}Przegląd · FlightWatch{% endblock %}
+{% block content %}
+{% set d = v.decision %}{% set c = v.chart %}
+<div class="ov-top">
+  <section class="fw-card ov-decision">
+    <span class="fw-kicker">Decyzja dziś</span>
+    <span class="ov-big">{{ d.label }}</span>
+    <div class="fw-stack" style="gap:2px;">
+      <span style="font-size:25px;font-weight:500;">{{ d.best }}</span>
+      <span class="fw-sub">{{ d.over }}</span>
+    </div>
+    <div class="ov-blocker">{{ d.blocker }}</div>
+    <div class="ov-facts">
+      <div><span>Najlepsza kwalifikująca</span><span>{{ d.best_qualifying }}</span></div>
+      <div><span>Mediana 14 dni</span><span>{{ d.median }}</span></div>
+      <div><span>Ocena Google</span><span>{{ d.google }}</span></div>
+      <div><span>Do terminu {{ d.deadline }}</span><span>{{ d.days_left }} dni</span></div>
+    </div>
+  </section>
+
+  <section class="fw-card" style="gap:12px;">
+    <div style="display:flex;align-items:baseline;gap:16px;">
+      <span class="fw-card-title">Najlepsza kwota dziennie</span>
+      <div class="chart-legend">
+        <span class="fw-legend"><span style="width:14px;height:2px;background:var(--color-accent);"></span>kwota</span>
+        <span class="fw-legend"><span style="width:14px;height:0;border-top:2px dashed var(--color-neutral-400);"></span>mediana 14 d</span>
+        <span class="fw-legend"><span style="width:14px;height:2px;background:var(--color-accent-300);"></span>próg {{ c.threshold }}</span>
+        {% if c.show_band %}<span class="fw-legend"><span style="width:14px;height:8px;background:var(--color-accent-900);"></span>BLISKO ≤ {{ c.near }}</span>{% endif %}
+      </div>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-y">
+        {% for t in c.y_ticks %}<span style="top:{{ t.top }};">{{ t.label }}</span>{% endfor %}
+      </div>
+      <div class="fw-stack" style="gap:6px;">
+        <svg viewBox="0 0 {{ c.w }} {{ c.h }}" preserveAspectRatio="none" style="width:100%;height:230px;display:block;" role="img" aria-label="Najlepsza kwota dziennie, mediana 14 dni i próg">
+          {% if c.show_band %}<rect x="0" y="{{ c.band_y }}" width="{{ c.w }}" height="{{ c.band_h }}" fill="var(--color-accent-900)"></rect>{% endif %}
+          <line x1="0" x2="{{ c.w }}" y1="{{ c.thr_y }}" y2="{{ c.thr_y }}" stroke="var(--color-accent-300)" stroke-width="1.5" vector-effect="non-scaling-stroke"></line>
+          <polyline points="{{ c.median_pts }}" fill="none" stroke="var(--color-neutral-400)" stroke-width="1.5" stroke-dasharray="5 4"></polyline>
+          <polyline points="{{ c.best_pts }}" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linejoin="round"></polyline>
+          <circle cx="{{ c.last_x }}" cy="{{ c.last_y }}" r="5" fill="var(--color-bg)" stroke="var(--color-accent)" stroke-width="2.5"></circle>
+        </svg>
+        <div class="chart-x">{% for l in c.x_labels %}<span>{{ l }}</span>{% endfor %}</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="ov-row">
+  <section class="fw-card" id="heatmap" style="gap:14px;">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <span class="fw-card-title">Data wylotu × lotnisko</span>
+      <span class="fw-note">najniższa wartość z wszystkich powrotów, tys. zł</span>
+      <div class="fw-seg" style="margin-left:auto;">
+        <a href="{{ v.heat_href.kwota }}" aria-pressed="{{ 'true' if v.heat.metric == 'kwota' else 'false' }}">Kwota do zapłaty</a>
+        <a href="{{ v.heat_href.K }}" aria-pressed="{{ 'true' if v.heat.metric == 'K' else 'false' }}">Koszt K</a>
+      </div>
+    </div>
+    <div class="heat-grid">
+      <span></span>
+      {% for d in v.heat.days %}<span style="text-align:center;font-size:11px;color:var(--color-neutral-400);">{{ d }}</span>{% endfor %}
+    </div>
+    {% for row in v.heat.rows %}
+    <div class="heat-grid">
+      <span style="align-self:center;font-weight:500;">{{ row.code }}</span>
+      {% for cell in row.cells %}<div class="heat-cell{% if cell.light %} light{% endif %}{% if cell.ring %} ring{% endif %}" title="{{ cell.title }}" style="background:color-mix(in srgb, var(--color-accent-500) {{ cell.pct }}%, var(--color-bg));">{{ cell.label }}</div>{% endfor %}
+    </div>
+    {% endfor %}
+    <div style="display:flex;gap:18px;font-size:12px;color:var(--color-neutral-400);">
+      <span class="fw-legend"><span class="heat-ring-sw"></span>{{ v.heat.ring_legend }}</span>
+      <span>jaśniej = taniej</span>
+    </div>
+  </section>
+
+  <section class="fw-card" style="gap:16px;">
+    <span class="fw-card-title">Budżet i zdrowie</span>
+    {% for b in v.budgets %}
+    <div class="fw-stack" style="gap:5px;font-size:13px;">
+      <div style="display:flex;justify-content:space-between;"><span>{{ b.b.name }}</span><span class="fw-dim">{{ b.used }} / {{ b.limit }}</span></div>
+      <div class="fw-bar">
+        <div class="fw-bar-fill" style="width:{{ b.pct }};"></div>
+        <div class="fw-bar-proj" style="left:{{ b.proj }};"></div>
+      </div>
+      <span class="fw-small fw-faint">{{ b.b.note }}</span>
+    </div>
+    {% endfor %}
+    <div class="fw-stack" style="gap:6px;font-size:13px;">
+      <span class="fw-eyebrow">Ostatnie przebiegi</span>
+      {% for when, what, ok in v.runs %}
+      <div style="display:grid;grid-template-columns:86px 1fr auto;gap:8px;">
+        <span class="fw-muted">{{ when }}</span><span>{{ what }}</span>
+        <span style="color:{{ 'var(--color-accent-300)' if ok else 'var(--color-neutral-200)' }};">{{ '✓' if ok else '!' }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+      {% for chip in v.chips %}<span class="fw-chip">{{ chip }}</span>{% endfor %}
+    </div>
+  </section>
+</div>
+
+{% set r = v.ranking %}{% set s = r.sel %}
+<div class="ov-row" id="ranking">
+  <section class="fw-card" style="gap:10px;">
+    <div style="display:flex;align-items:baseline;gap:12px;">
+      <span class="fw-card-title">Ranking wg K</span>
+      <span class="fw-note">skan 07:30 · kliknij wiersz</span>
+    </div>
+    <div class="fw-tr fw-th rank-cols">
+      <span>#</span><span>Opcja</span><span>Lot</span><span>Daty</span><span>Czas</span><span class="num">Kwota</span><span class="num">K</span><span>Powrót</span>
+    </div>
+    {% for row in r.rows %}{% set o = row.o %}
+    <a class="fw-tr rank-cols" href="{{ row.href }}"{% if row.selected %} aria-current="true"{% endif %}>
+      <span class="fw-muted">{{ row.rank }}</span>
+      <span style="color:var(--color-accent-300);">{{ o.label }}</span>
+      <span>{{ o.origin }} · {{ o.airline }} <span class="fw-muted">via {{ o.via }}</span></span>
+      <span class="fw-dim">{{ o.dates }}</span>
+      <span>{{ row.hours }}</span>
+      <span class="num">{{ row.payable }}</span>
+      <span class="num strong">{{ row.k }}</span>
+      <span style="color:{{ 'var(--color-neutral-300)' if o.qualifies else 'var(--color-neutral-500)' }};">{{ o.flex_short }}</span>
+    </a>
+    {% endfor %}
+  </section>
+
+  <section class="fw-card raised" style="gap:14px;">
+    <span class="fw-kicker">Szczegół oferty · {{ s.o.label }}</span>
+    <div class="fw-stack" style="gap:2px;">
+      <span style="font-size:20px;font-weight:500;">{{ s.o.origin }} → DPS · {{ s.o.airline }}</span>
+      <span class="fw-sub">{{ s.stops }} · cena live sprzed {{ s.o.age_min }} min</span>
+    </div>
+    <div class="fw-stack" style="gap:4px;font-size:13px;">
+      <span>→ {{ s.o.out }}</span>
+      <span>← {{ s.o.back }}</span>
+    </div>
+    <div class="fw-stack" style="gap:6px;">
+      <span class="fw-eyebrow">Skład K · {{ s.k }}</span>
+      <div class="fw-stacked" style="height:10px;border-radius:3px;">
+        {% for p in s.parts %}<div class="bg-{{ p.color }}" style="width:{{ p.share }};"></div>{% endfor %}
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:3px 10px;font-size:13px;">
+        {% for p in s.parts %}<span class="fw-legend"><span class="sw bg-{{ p.color }}"></span>{{ p.name }}</span><span>{{ p.value }}</span>{% endfor %}
+      </div>
+    </div>
+    <div class="fw-stack" style="gap:4px;font-size:13px;">
+      <span class="fw-eyebrow">Warunki i KUP</span>
+      <span>{{ s.o.flex }}</span>
+      <span class="fw-dim">{{ s.qualifies }}</span>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <a class="fw-btn primary" href="{{ s.o.booking_url }}" target="_blank" rel="noopener noreferrer">Rezerwuj ↗</a>
+      <button class="fw-btn" type="button" disabled title="Potwierdzenie live z panelu – po podłączeniu dostawców (sesja 2)">Potwierdź live</button>
+    </div>
+  </section>
+</div>
+{% endblock %}

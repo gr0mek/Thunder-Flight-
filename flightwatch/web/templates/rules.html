@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Reguły taryf · FlightWatch{% endblock %}
+{% block content %}
+{% set f = v.form %}
+<div class="split-420">
+  <div class="fw-stack" style="gap:16px;">
+    <div class="fw-stack" style="gap:4px;">
+      <h3 class="fw-h3">Reguły taryf</h3>
+      <span class="fw-sub">Bagaż, miejsca i warunki dla linii i marki taryfy. Bez reguły oferta nie może dać KUP.</span>
+    </div>
+    {% if v.missing %}
+    <div class="missing">
+      <span class="fw-eyebrow" style="color:var(--color-accent-300);">Brakujące reguły · blokują KUP</span>
+      {% for row in v.missing %}
+      <div class="missing-row">
+        <span style="font-weight:500;">{{ row.m.code }} {{ row.m.brand }}</span>
+        <span class="fw-dim">{{ row.count }}</span>
+        <span class="fw-dim">najlepsza {{ row.best }}</span>
+        <a class="fw-btn primary sm" href="{{ row.href }}">Dodaj regułę</a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="fw-table">
+      <div class="fw-tr fw-th rule-cols">
+        <span>Linia · taryfa</span><span>Bagaż</span><span>Podr.</span><span>Miejsce</span><span>Zmiana</span><span>Zwrot</span><span>Aktual.</span>
+      </div>
+      {% for row in v.rows %}{% set r = row.r %}
+      <a class="fw-tr rule-cols" href="{{ row.href }}"{% if row.selected %} aria-current="true"{% endif %}>
+        <span><span style="font-weight:500;">{{ r.code }}</span> {{ r.brand }}</span>
+        <span>{{ r.bag }}</span><span>{{ r.carry }}</span><span>{{ r.seat }}</span><span>{{ r.change }}</span>
+        <span class="fw-dim">{{ r.refund }}</span><span class="fw-muted">{{ r.updated }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  <form class="fw-card raised" id="rule-form" method="post" action="/reguly" style="gap:12px;align-self:start;">
+    <span class="fw-kicker">{{ f.kicker }}</span>
+    <span style="font-size:20px;font-weight:500;">{{ f.title }}</span>
+    {% if v.saved %}<div class="fw-alert" role="status">Zapisano w fare_rules.yaml.</div>{% endif %}
+    {% if f.error %}<div class="fw-alert" role="alert">{{ f.error }}</div>{% endif %}
+    <input type="hidden" name="airline" value="{{ f.airline }}">
+    {% for fld in f.fields %}
+    <div class="field">
+      <label for="rule-{{ fld.name }}">{{ fld.label }}</label>
+      <input id="rule-{{ fld.name }}" name="{{ fld.name }}" value="{{ fld.value }}" placeholder="uzupełnij"{% if fld.name in ('code', 'brand') %} required{% endif %}{% if fld.name == 'code' %} maxlength="2" autocomplete="off"{% endif %}>
+    </div>
+    {% endfor %}
+    <span class="fw-note">{{ f.hint }}</span>
+    <div style="display:flex;gap:8px;">
+      <button class="fw-btn primary" type="submit">Zapisz w fare_rules.yaml</button>
+      <button class="fw-btn" type="button" disabled title="Link do strony taryfy – gdy reguła będzie miała pole url">Strona taryfy ↗</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
