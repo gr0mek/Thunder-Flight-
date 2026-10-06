@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Skany · FlightWatch{% endblock %}
+{% block content %}
+<div class="split-420">
+  <div class="fw-stack" style="gap:14px;">
+    <h3 class="fw-h3">Skany</h3>
+    <div class="stat-tiles">
+      {% for label, value in v.stats %}<div class="stat-tile"><span>{{ label }}</span><span>{{ value }}</span></div>{% endfor %}
+    </div>
+    <div class="fw-table">
+      <div class="fw-tr fw-th scan-cols">
+        <span>Start</span><span>Tryb</span><span class="num">Zapytania</span><span class="num">Cache</span><span class="num">Błędy</span><span class="num">Czas</span><span>Dostawcy</span><span>Stan</span>
+      </div>
+      {% for row in v.rows %}{% set s = row.s %}
+      <a class="fw-tr scan-cols" href="{{ row.href }}"{% if row.selected %} aria-current="true"{% endif %}>
+        <span class="fw-dim">{{ s.when }}</span>
+        <span>{{ s.mode }}</span>
+        <span class="num">{{ s.queries }}</span>
+        <span class="num fw-dim">{{ s.cache }}</span>
+        <span class="num">{{ s.errors }}</span>
+        <span class="num fw-dim">{{ s.duration }}</span>
+        <span class="fw-dim">{{ s.providers }}</span>
+        <span style="color:{{ 'var(--color-accent-300)' if s.ok else 'var(--color-neutral-100)' }};">{{ 'OK' if s.ok else 'Uwaga' }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  <section class="fw-card raised" style="gap:14px;align-self:start;">
+    <span class="fw-kicker">Przebieg · {{ v.sel.when }}</span>
+    <span style="font-size:20px;font-weight:500;">{{ v.sel.title }}</span>
+    <div class="fw-stack">
+      {% for st in v.sel.steps %}
+      <div class="step">
+        <span class="step-dot{% if st.warn %} warn{% endif %}"></span>
+        <div class="fw-stack"><span>{{ st.name }}</span><span class="fw-note">{{ st.note }}</span></div>
+        <span class="fw-muted">{{ st.t }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="display:flex;gap:8px;">
+      <button class="fw-btn" type="button" disabled title="Podgląd plików z data/raw/ – po sesji 2">Surowe odpowiedzi</button>
+      <button class="fw-btn" type="button" disabled title="Log przebiegu – po sesji 5 (journald)">Log</button>
+    </div>
+  </section>
+</div>
+{% endblock %}

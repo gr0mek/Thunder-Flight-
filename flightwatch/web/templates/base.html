@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}FlightWatch{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', path='nocturne.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', path='panel.css') }}">
+</head>
+<body>
+<header class="fw-nav">
+  <a class="fw-brand" href="/">FlightWatch</a>
+  <span class="fw-watch">{{ watch_tag }}</span>
+  <nav class="fw-tabs">
+    {% for key, label, path in nav %}<a href="{{ path }}"{% if key == active %} aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}
+  </nav>
+  <span class="fw-nav-status">{{ header_status }}</span>
+</header>
+<main class="fw-page">
+{% block content %}{% endblock %}
+</main>
+</body>
+</html>
